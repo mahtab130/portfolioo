@@ -8,7 +8,6 @@ import {
   SPACE_M2,
   SPACE_S2,
   SPACE_M3,
-  SPACE_H3,
   SPACE_D1,
 } from "../constants/spaces";
 import {
@@ -54,15 +53,14 @@ export const homeSectionSX: SxProps<Theme> = {
     width: "100%",
     height: "100vh",
     display: "flex",
+    justifyContent: "space-between",
     maxWidth: MAX_WIDTH,
     position: "relative",
-    flexDirection: "column",
     "& .texts-wrapper": {
-      mt: SPACE_H3,
       pt: SPACE_H2,
       display: "flex",
+      height: "100%",
       position: "relative",
-      height: "fit-content",
       flexDirection: "column",
       justifyContent: "center",
       "& .back-image": {
@@ -93,6 +91,26 @@ export const homeSectionSX: SxProps<Theme> = {
         width: "470px",
         bottom: "-160px",
         position: "absolute",
+      },
+    },
+    "& .image-wrappper": {
+      width: "50%",
+      position: "relative",
+
+      "& div": {
+        left: "0",
+        top: "-50px",
+        height: "100%",
+        width: "530px",
+        display: "flex",
+        alignItems: "end",
+        position: "absolute",
+        backgroundColor: "#EFF5FF",
+      },
+      "& img": {
+        mx: "auto",
+        width: "425px",
+        height: "630px",
       },
     },
   },

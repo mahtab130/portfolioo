@@ -18,10 +18,8 @@ export const Navbar = memo(() => {
 
   return (
     <Grid className="navbar-wrapper">
-      <Grid className="navbar-container" sx={navbarSX(undefined)}>
-        <Grid className="logo-wrapper">
-          <Box className="logo" component="img" src={logo} />
-        </Grid>
+      <Grid className="navbar-container" sx={navbarSX}>
+        <Box className="logo" component="img" src={logo} />
         <Grid className="nav-list-wrapper">
           {map(navbarValues, ({ name, url }, index) => (
             <Typography
@@ -39,7 +37,7 @@ export const Navbar = memo(() => {
           ))}
         </Grid>
         <Grid className="actions-wrapper">
-          <CustomButton text={"تماس بگیر"} />
+          <CustomButton text={"تماس بگیر"} variant="contained" />
         </Grid>
       </Grid>
     </Grid>

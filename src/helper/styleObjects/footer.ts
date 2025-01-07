@@ -1,11 +1,6 @@
 import { SxProps, Theme } from "@mui/material";
 
-import {
-  COLOR_WHITE,
-  COLOR_PRIMARY,
-  COLOR_SECEONDRY,
-  COLOR_LIGHT_GRAY,
-} from "../constants/colors";
+import { COLOR_WHITE, COLOR_PRIMARY } from "../constants/colors";
 import {
   FONT_BODY_SMALL,
   FONT_LABEL_LARGE,
@@ -28,7 +23,7 @@ export const footerSX: SxProps<Theme> = {
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  backgroundColor: COLOR_SECEONDRY,
+  backgroundColor: COLOR_PRIMARY,
   "& .content": {
     width: "100%",
     display: "flex",
@@ -43,7 +38,7 @@ export const footerSX: SxProps<Theme> = {
       "& .description": {
         fontWeight: FONT_WEIGHT_BLOD,
         lineHeight: SPACE_M3,
-        color: COLOR_LIGHT_GRAY,
+        color: "#F1F1F1",
         fontSize: FONT_LABEL_LARGE,
       },
       "& .socail-boxes": {
@@ -82,7 +77,7 @@ export const footerSX: SxProps<Theme> = {
         cursor: "pointer",
         fontWeight: FONT_WEIGHT_BLOD,
         transition: "all 0.4s",
-        color: COLOR_LIGHT_GRAY,
+        color: "#F1F1F1",
         fontSize: FONT_LABEL_LARGE,
         "&:hover": {
           color: COLOR_PRIMARY,
@@ -116,7 +111,7 @@ export const footerSX: SxProps<Theme> = {
       fontWeight: FONT_WEIGHT_BLOD,
       gap: "4px",
       alignItems: "center",
-      color: COLOR_LIGHT_GRAY,
+      color: "#F1F1F1",
       fontSize: FONT_BODY_SMALL,
       "& span": {
         color: COLOR_PRIMARY,

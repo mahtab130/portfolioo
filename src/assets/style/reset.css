@@ -2,8 +2,9 @@
 body {
   margin: 0;
   padding: 0;
+  direction: rtl;
   /* overflow: hidden; */
-  font-family: Garamond;
+  font-family: YekanBakh;
   background-color: #ABDDF0;
 }
 

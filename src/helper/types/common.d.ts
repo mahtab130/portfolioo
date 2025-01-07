@@ -15,7 +15,8 @@ interface ICustomLabel {
 }
 
 interface ICustomTitle {
-  title?: string;
+  title: { text?: string; color?: string }[];
+  pretitle?: string;
   setting?: {
     color?: string;
     iconColor?: string;

@@ -21,12 +21,12 @@ import {
 import {
   FONT_LABEL_LARGE,
   FONT_WEIGHT_BLOD,
-  FONT_TITLE_SMALL,
   FONT_BODY_MEDIUM2,
   FONT_BODY_MEDIUM1,
   FONT_CAPTION_LARGE,
   FONT_HEADING_XLARGE,
   FONT_BODY_SMALL,
+  FONT_TITLE_MEDIUM,
 } from "../constants/fonts";
 import { MAX_WIDTH } from "../constants/static";
 
@@ -240,27 +240,25 @@ export const blogCardSX: SxProps<Theme> = {
   },
 };
 
-export const customTitle = (
-  iconColor?: string,
-  color?: string
-): SxProps<Theme> => ({
-  gap: SPACE_D1,
+export const customTitle = (color?: string): SxProps<Theme> => ({
+  gap: "8px",
   display: "flex",
-  fontWeight: FONT_WEIGHT_BLOD,
+  flexDirection: "column",
   width: "fit-content",
-  position: "relative",
-  alignItems: "center",
-  fontSize: FONT_TITLE_SMALL,
-  color: color || COLOR_TEXT,
-  justifyContent: "space-between",
-  borderBottom: "2px solid" + (iconColor || COLOR_SECEONDRY),
-  "& .vector-image": {
-    left: "-45px",
-    width: "100px",
-    height: "100px",
-    bottom: "-32px",
-    position: "absolute",
-    zIndex: 22000,
+  "& .pre-title": {
+    gap: "2px",
+    display: "flex",
+    fontWeight: "600",
+    alignItems: "center",
+    fontSize: FONT_BODY_MEDIUM2,
+    color: color || COLOR_TEXT,
+  },
+  "& .title": {
+    gap: "8px",
+    display: "flex",
+    fontSize: FONT_TITLE_MEDIUM,
+    fontWeight: "800",
+    flexDirection: "row",
   },
 });
 

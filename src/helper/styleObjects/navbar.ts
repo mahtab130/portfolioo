@@ -1,38 +1,38 @@
 import { SxProps, Theme } from "@mui/material";
 
 import {
+  COLOR_WHITE,
   COLOR_PRIMARY,
   COLOR_SECEONDRY,
-  COLOR_WHITE,
+  COLOR_TEXT_GRAY,
 } from "../constants/colors";
 import {
   FONT_BODY_SMALL,
-  FONT_CAPTION_LARGE,
   FONT_WEIGHT_BLOD,
+  FONT_CAPTION_LARGE,
 } from "../constants/fonts";
-import { SPACE_H2, SPACE_M2, SPACE_D2, SPACE_S1 } from "../constants/spaces";
 import { MAX_WIDTH } from "../constants/static";
+import { SPACE_H2, SPACE_D2, SPACE_S1, SPACE_XS1 } from "../constants/spaces";
 
-export const navbarSX = (openCategoryPopper?: boolean): SxProps<Theme> => ({
+export const navbarSX: SxProps<Theme> = {
   mx: "auto",
-  px: SPACE_H2,
-  py: SPACE_M2,
+  px: SPACE_XS1,
+  py: SPACE_XS1,
   top: SPACE_H2,
   zIndex: "3000",
   display: "flex",
   width: MAX_WIDTH,
-  position: "absolute",
+  position: "fixed",
   alignItems: "center",
-  borderRadius: "12px",
+  borderRadius: "34px",
   animation: "fadeIn 1s",
-  backgroundColor: COLOR_PRIMARY,
+  backgroundColor: COLOR_WHITE,
   justifyContent: "space-between",
-  borderBottomRightRadius: openCategoryPopper ? "0" : undefined,
-  "& .logo-wrapper": {
-    "& .logo": {
-      width: "120px",
-      height: "30px",
-    },
+  boxShadow: " 1px 1px 20px 6px #10182808",
+
+  "& .logo": {
+    width: "95px",
+    height: "45px",
   },
   "& .nav-list-wrapper": {
     gap: SPACE_D2,
@@ -42,33 +42,35 @@ export const navbarSX = (openCategoryPopper?: boolean): SxProps<Theme> => ({
       zIndex: "20",
       cursor: "pointer",
       position: "relative",
+      color: COLOR_TEXT_GRAY,
       fontSize: FONT_BODY_SMALL,
       fontWeight: FONT_WEIGHT_BLOD,
       "&.active": {
+        color: COLOR_PRIMARY,
         "&:before": {
           transform: " scaleX(1)",
-          transformOrigin: "bottom left",
+          transformOrigin: "bottom right",
         },
       },
       "&:hover ": {
         "&:before": {
           transform: " scaleX(1)",
-          transformOrigin: "bottom left",
+          transformOrigin: "bottom right",
         },
       },
       "&:before": {
         content: "''",
         width: "100%",
-        height: "2px",
+        height: "1.5px",
         display: "block",
         position: "absolute",
-        right: 0,
-        bottom: "-2px",
+        left: 0,
+        bottom: "-5px",
         zIndex: "-1",
         transform: " scaleX(0)",
-        background: COLOR_SECEONDRY,
+        background: COLOR_PRIMARY,
         transition: "transform .3s ease",
-        transformOrigin: "bottom right",
+        transformOrigin: "bottom left",
       },
     },
   },
@@ -101,4 +103,4 @@ export const navbarSX = (openCategoryPopper?: boolean): SxProps<Theme> => ({
       },
     },
   },
-});
+};
