@@ -1,14 +1,6 @@
-import {
-  memo,
-  useRef,
-  useMemo,
-  useState,
-  useCallback,
-  ChangeEvent,
-} from "react";
+import { memo, useRef, useState } from "react";
 
 import {
-  Box,
   Grid,
   Theme,
   SxProps,
@@ -29,7 +21,6 @@ import {
 } from "../../helper/constants/fonts";
 import { CustomLabel } from "./CustomLabel";
 import { SPACE_S4 } from "../../helper/constants/spaces";
-import { clearIcon, eyeIcon } from "../other/SvgComponent";
 
 export type TCustomTextfield =
   | {
@@ -61,61 +52,13 @@ export const CustomTextfield = memo<TCustomTextfield>(
     customLabel,
     ...props
   }) => {
-    const {
-      noBorder,
-      labelSize,
-      hasDelete,
-      labelColor,
-      customColor,
-      isIconButton,
-    } = setting ?? {};
+    const { noBorder, labelSize, hasDelete, labelColor, customColor } =
+      setting ?? {};
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     const [, keyUp] = useState<HTMLDivElement>();
-    const [showPassword, setShowPassword] = useState<boolean>(false);
-
-    const handlePasswordVisibility = useCallback(() => {
-      setShowPassword((prevState) => !prevState);
-    }, []);
-
-    const handleDeleteClick = useCallback(() => {
-      inputRef.current && (inputRef.current.value = "");
-      onChange &&
-        onChange({ target: inputRef.current } as ChangeEvent<
-          HTMLInputElement | HTMLTextAreaElement
-        >);
-      !onChange && keyUp(inputRef.current as HTMLDivElement);
-    }, [onChange]);
 
     const hasIcon = endIcon ? true : false;
-
-    const endIconComponent = useMemo(
-      () =>
-        type == "password" ? (
-          <Box className="pass-icon" onClick={handlePasswordVisibility}>
-            {eyeIcon()}
-          </Box>
-        ) : hasDelete ? (
-          <Box
-            component="div"
-            className="delete-icon"
-            onClick={handleDeleteClick}
-          >
-            {clearIcon()}
-          </Box>
-        ) : (
-          endIcon &&
-          (isIconButton ? <Box className={"end-icon"}>{endIcon}</Box> : endIcon)
-        ),
-      [
-        type,
-        endIcon,
-        hasDelete,
-        isIconButton,
-        handleDeleteClick,
-        handlePasswordVisibility,
-      ]
-    );
 
     return (
       <Grid
@@ -140,9 +83,7 @@ export const CustomTextfield = memo<TCustomTextfield>(
               : undefined
           }
           {...props}
-          type={type !== "password" || showPassword ? "text" : "password"}
           InputProps={{
-            endAdornment: <>{endIconComponent}</>,
             startAdornment: <>{startIcon}</>,
           }}
         />

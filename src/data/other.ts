@@ -1,9 +1,7 @@
 export const navbarValues = [
-  { name: "Home", url: "/" },
-  { name: "Category", url: "/category" },
-  { name: "About Us", url: "/about-us" },
-  { name: "Services", url: "/services" },
-  { name: "Blogs", url: "/blogs" },
+  { name: "صفحه اصلی", url: "/" },
+  { name: "بلاگ", url: "/blogs" },
+  { name: "پژوهش ها", url: "/researches" },
 ];
 
 export const uniqueIdGenerator = () => {

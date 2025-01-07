@@ -7,7 +7,7 @@ import { CustomTitle } from "./CustomTitle";
 import { AnimationSlideIn } from "./AnimateComponent";
 import { contentProviderSX } from "../../helper/styleObjects/common";
 
-import vector2 from "../../assets/images/vectors/vector-flower-white.webp";
+// import vector2 from "../../assets/images/vectors/vector-flower-white.webp";
 
 export const ContentSection = memo<IContentSection<SxProps<Theme>>>(
   ({ content, image, title, setting }) => {
@@ -24,7 +24,10 @@ export const ContentSection = memo<IContentSection<SxProps<Theme>>>(
               <Box
                 component="img"
                 className="vector"
-                src={vectorSrc ? vectorSrc : vector2}
+                src={
+                  vectorSrc ? vectorSrc : ""
+                  // : vector2
+                }
               />
               <Grid className="content">{content}</Grid>
             </>

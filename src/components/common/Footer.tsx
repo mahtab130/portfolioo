@@ -6,12 +6,11 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import {
   sendIcon,
-  tweeterIcon,
+  twitterIcon,
   youtubeIcon,
-  facebookIcon,
+  faceBookIcon,
   instagramIcon,
-  messangerIcon,
-  copyRightIcon,
+  messengerIcon,
 } from "../other/SvgComponent";
 import { navbarValues } from "../../data/other";
 import { AnimationSlideIn } from "./AnimateComponent";
@@ -19,7 +18,7 @@ import { CustomImage } from "../controller/CustomImage";
 import { footerSX } from "../../helper/styleObjects/footer";
 import { CustomTextfield } from "../controller/CustomTextfield";
 
-import logo from "../../assets/images/vectors/logo-white.webp";
+import logo from "../../assets/images/vectors/logo.webp";
 
 export const Footer = memo(() => {
   const navigate = useNavigate();
@@ -93,11 +92,8 @@ export const Footer = memo(() => {
       <Grid className="copyright-text">
         <AnimationSlideIn direction="left">
           <Typography className="text">
-            Copyright{" "}
-            <Box component="span" className="icon">
-              {copyRightIcon()}
-            </Box>{" "}
-            2024 <Box component="span">Mozhdeh</Box>. All right reserved.
+            Copyright <Box component="span" className="icon"></Box> 2024{" "}
+            <Box component="span">Mozhdeh</Box>. All right reserved.
           </Typography>
         </AnimationSlideIn>
         <AnimationSlideIn direction="right">
@@ -110,8 +106,8 @@ export const Footer = memo(() => {
 
 const socailIcons = [
   instagramIcon(),
-  facebookIcon(),
-  tweeterIcon(),
-  messangerIcon(),
+  faceBookIcon(),
+  twitterIcon(),
+  messengerIcon(),
   youtubeIcon(),
 ];

@@ -2,29 +2,25 @@ import { FC } from "react";
 
 import { Grid } from "@mui/material";
 
-import { FaqSection } from "../sections/FaqSection";
-import { BlogSection } from "../sections/BlogSection";
+// import { AboutMe } from "../sections/AboutMe";
+// import { BlogSection } from "../sections/BlogSection";
 import { HomeSection } from "../sections/HomeSection";
 import { homeSX } from "../../helper/styleObjects/main";
-import { AboutUsSection } from "../sections/AboutUsSection";
-import { ProductSection } from "../sections/ProductSection";
-import { ServicesSection } from "../sections/ServicesSection";
-import { CommentsSection } from "../sections/CommentsSection";
-import { CategorySection } from "../sections/CategorySection";
-import { BestSellingSection } from "../sections/BestSellingSection";
+// import { AwardsSection } from "../sections/AwardsSection";
+// import { ServicesSection } from "../sections/ServicesSection";
+// import { CommentsSection } from "../sections/CommentsSection";
+// import { ResearchesSection } from "../sections/ResearchesSection";
 
 const Home: FC = () => {
   return (
     <Grid sx={homeSX}>
       <HomeSection />
-      <ProductSection />
-      <CategorySection />
-      <AboutUsSection />
-      <ServicesSection />
-      <BestSellingSection />
+      {/* <ServicesSection />
+      <AboutMe />
+      <ResearchesSection />
+      <AwardsSection />
       <CommentsSection />
-      <FaqSection />
-      <BlogSection />
+      <BlogSection /> */}
     </Grid>
   );
 };

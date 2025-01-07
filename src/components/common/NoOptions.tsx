@@ -17,7 +17,7 @@ export const NoOptionsComponent = memo<INoOptionsComponent>(
     return (
       <AnimationSlideIn direction="left">
         <Grid sx={noOptionsComponentSX(imageSize)} className="empty-section">
-          <CustomImage className={"empty-image"} src={imageSrc} />
+          <CustomImage className={"empty-image"} src={imageSrc || ""} />
           {searchKey ? (
             <Typography className="keword-not-exist">
               NO result for “{searchKey}”

@@ -26,7 +26,7 @@ import {
   FONT_HEADING_LARGE,
 } from "../constants/fonts";
 
-import backgroundImage from "../../assets/images/home/background-image.webp";
+// import backgroundImage from "../../assets/images/home/background-image.webp";
 import { MAX_WIDTH } from "../constants/static";
 
 export const homeSectionSX: SxProps<Theme> = {
@@ -45,7 +45,7 @@ export const homeSectionSX: SxProps<Theme> = {
     backgroundSize: "cover",
     backgroundPosition: "right",
     backgroundRepeat: "no-repeat",
-    backgroundImage: `url(${backgroundImage})`,
+    // backgroundImage: `url(${backgroundImage})`,
   },
   "& .container": {
     mx: "auto",

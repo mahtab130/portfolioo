@@ -10,9 +10,9 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import {
-  customerIcon,
-  arrowLeftIcon,
-  arrowRightIcon,
+  // customerIcon,
+  // arrowLeftIcon,
+  // arrowRightIcon,
   arrowLeft2Icon,
 } from "../other/SvgComponent";
 import {
@@ -88,16 +88,17 @@ const ContentComment = memo<IContentComment>(
         <Typography className="description">{comment}</Typography>
         <Grid className="personal-info">
           <Typography className="name">
-            {customerIcon()} {name}
+            {/* {customerIcon()} */}
+            {name}
           </Typography>
           <Typography className="job">{carear}</Typography>
         </Grid>
         <Grid className="swip-buttons">
           <Box component="div" className={prev}>
-            {arrowLeftIcon()}
+            {/* {arrowLeftIcon()}> */}
           </Box>
           <Box component="div" className={next}>
-            {arrowRightIcon()}
+            {/* {arrowRightIcon()} */}
           </Box>
         </Grid>
       </Grid>

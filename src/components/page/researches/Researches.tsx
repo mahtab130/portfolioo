@@ -11,9 +11,9 @@ import { blogSX } from "../../../helper/styleObjects/blog";
 import { AnimationSlideIn } from "../../common/AnimateComponent";
 import { CustomPagination } from "../../controller/CustomPagination";
 
-// import backgrounImage from "../../../assets/images/blogs/blog-back.webp";
+import backgrounImage from "../../../assets/images/blogs/blog-back.webp";
 
-const Blogs: FC = () => {
+const Researches: FC = () => {
   const [page, setPage] = useState(1);
 
   const itemsPerPage = 6;
@@ -26,8 +26,7 @@ const Blogs: FC = () => {
     <Grid sx={blogSX}>
       <HeadingPage
         title="Blogs"
-        image=""
-        // image={backgrounImage}
+        image={backgrounImage}
         description="Elegant Adornments store is a gallery that offers you the most beautiful collection of handmade jewelry and jewelry by combining traditional art and modern designs."
       />
 
@@ -60,4 +59,4 @@ const Blogs: FC = () => {
   );
 };
 
-export default Blogs;
+export default Researches;

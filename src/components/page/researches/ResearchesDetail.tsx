@@ -14,7 +14,7 @@ import { blogDetailSX, contentBlogSX } from "../../../helper/styleObjects/blog";
 // import image2 from "../../../assets/images/blogs/blog-detail-2.webp";
 // import image3 from "../../../assets/images/blogs/blog-detail-3.webp";
 
-export const BlogDetail: FC = () => {
+export const ResearchesDetail: FC = () => {
   const { id: currentId } = useParams();
 
   const { image, title } =

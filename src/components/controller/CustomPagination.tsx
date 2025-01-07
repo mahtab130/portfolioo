@@ -1,5 +1,5 @@
 import {
-  Box,
+  // Box,
   Pagination,
   PaginationItem,
   PaginationProps,
@@ -12,14 +12,13 @@ import {
   FONT_TITLE_SMALL,
   FONT_WEIGHT_BLOD,
 } from "../../helper/constants/fonts";
-import { arrowRight3Icon } from "../other/SvgComponent";
 
 interface ICustomPagination extends PaginationProps {
   name?: string;
 }
 
 export const CustomPagination = memo<ICustomPagination>(({ ...props }) => {
-  const nextIcon = () => <Box className="icon">{arrowRight3Icon()}</Box>;
+  // const nextIcon = () => <Box className="icon">{arrowRight3Icon()}</Box>;
 
   return (
     <Pagination
@@ -29,7 +28,7 @@ export const CustomPagination = memo<ICustomPagination>(({ ...props }) => {
       {...props}
       renderItem={(item) => (
         <PaginationItem
-          slots={{ next: nextIcon }}
+          // slots={{ next: nextIcon }}
           className="pagination-item"
           {...item}
         />
