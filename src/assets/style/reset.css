@@ -1,0 +1,24 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  font-family: Garamond;
+  background-color: #ABDDF0;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;               
+}
+
+::-webkit-scrollbar-track {
+  background: #ABDDF0;        
+}
+
+::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: #568A9E90;    
+  border-radius: 20px;
+
+}
