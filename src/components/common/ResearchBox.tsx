@@ -11,6 +11,7 @@ export const ResearchBox = memo<IResearchBox>(
         <Grid className="description">{description}</Grid>
         <Box className="divider"></Box>
         <CustomImage className="image" src={image} />
+        <Grid className="arrow-wrapper"></Grid>
       </Grid>
     );
   }

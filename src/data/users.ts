@@ -5,20 +5,20 @@ import user2 from "../assets/images/home/comment.webp";
 export const usersComment: IUserComment[] = [
   {
     id: 2,
-    name: "Kathrine",
-    carear: "Accountant",
+    name: "محمد سالاری",
+
     comment:
-      "Welcome to our exquisite jewelry store,where elegance meets crasmanship Discover a dazzling array of fine jewelry, from  stunning diamond rings to elegant pearl necklaces.",
+      "لورم ایپسوم متـــن ساختگی با تولـــید سادگی نامفـــــهوم از صـــــنعت چـــاپ ، و با استــفاده از طــــــــــراحان گرافیک است چاپگرها و مـتونبلکه روزنامــــه و مجــــله در ســـتون و سطر آنچــــنان کـــــــــــه لازم اســـــــــت ، و برای شــــرایط فعــــلی تکنولوژی مــــــورد نیاز.",
     image: user2,
     rate: 3,
   },
   {
     id: 1,
-    name: "Elina",
-    carear: "Three star hotel manager",
+    name: "محمد سالاری",
+
     comment:
-      "Welcome to our exquisite jewelry store,where elegance meets crasmanship Discover a dazzling array of fine jewelry, from  stunning diamond rings to elegant pearl necklaces.",
+      "لورم ایپسوم متـــن ساختگی با تولـــید سادگی نامفـــــهوم از صـــــنعت چـــاپ ، و با استــفاده از طــــــــــراحان گرافیک است چاپگرها و مـتونبلکه روزنامــــه و مجــــله در ســـتون و سطر آنچــــنان کـــــــــــه لازم اســـــــــت ، و برای شــــرایط فعــــلی تکنولوژی مــــــورد نیاز.",
     image: user2,
-    rate: 4,
+    rate: 3,
   },
 ];

@@ -23,6 +23,8 @@ import { FONT_WEIGHT_REGULAR } from "../../helper/constants/fonts";
 import { COLOR_PRIMARY, COLOR_TEXT } from "../../helper/constants/colors";
 import { Loading } from "../common/Loading";
 
+import "../../assets/style/styleSheet.css";
+
 const MainLayout: FC = () => {
   const children = useRoutes(routes);
 

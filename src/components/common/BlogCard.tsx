@@ -26,7 +26,7 @@ export const BlogCard = memo<IBlogCard>(
           <Grid className="button-wrapper">
             <CustomButton
               variant="text"
-              text={"Read More"}
+              text={"ادامه مطلب"}
               className="button"
               endIcon={arrowLeft2Icon()}
               onClick={() => navigate(navigateString || "")}

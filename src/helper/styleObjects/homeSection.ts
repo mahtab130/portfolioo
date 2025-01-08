@@ -6,11 +6,7 @@ import {
   COLOR_BACKGROUND,
   COLOR_TEXT_WHITE,
 } from "../constants/colors";
-import {
-  FONT_WEIGHT_BLOD,
-  FONT_BODY_MEDIUM2,
-  FONT_HEADING_LARGE,
-} from "../constants/fonts";
+import { FONT_WEIGHT_BLOD, FONT_BODY_MEDIUM2 } from "../constants/fonts";
 
 // import backgroundImage from "../../assets/images/home/background-image.webp";
 import { MAX_WIDTH } from "../constants/static";
@@ -22,17 +18,6 @@ export const homeSectionSX: SxProps<Theme> = {
   position: "relative",
   justifyContent: "center",
   backgroundColor: COLOR_BACKGROUND,
-  "& .background-image": {
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-    backgroundSize: "cover",
-    backgroundPosition: "right",
-    backgroundRepeat: "no-repeat",
-    // backgroundImage: `url(${backgroundImage})`,
-  },
   "& .container": {
     mx: "auto",
     my: SPACE_H2,
@@ -44,7 +29,6 @@ export const homeSectionSX: SxProps<Theme> = {
     maxWidth: MAX_WIDTH,
     position: "relative",
     "& .texts-wrapper": {
-      pt: SPACE_H2,
       display: "flex",
       height: "100%",
       position: "relative",
@@ -62,7 +46,6 @@ export const homeSectionSX: SxProps<Theme> = {
         color: COLOR_WHITE,
         animation: "1s ease-out 0s 1 slideInLeft",
         fontWeight: FONT_WEIGHT_BLOD,
-        fontSize: FONT_HEADING_LARGE,
       },
       "& .subtitle": {
         mt: SPACE_XS1,
@@ -105,7 +88,7 @@ export const homeSectionSX: SxProps<Theme> = {
 
 export const servicesSectionSX: SxProps<Theme> = {
   width: "100%",
-  height: "100vh",
+  height: "90vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -114,7 +97,7 @@ export const servicesSectionSX: SxProps<Theme> = {
     display: "flex",
     maxWidth: MAX_WIDTH,
     flexDirection: "column",
-    gap: "46px",
+    gap: "76px",
     "& .title-wrapper": {
       width: "100%",
       display: "flex",
@@ -202,7 +185,7 @@ export const awardSectionSX: SxProps<Theme> = {
     display: "flex",
     maxWidth: MAX_WIDTH,
     flexDirection: "column",
-    gap: "46px",
+    gap: "36px",
     "& .title-wrapper": {
       width: "100%",
       display: "flex",
@@ -213,7 +196,7 @@ export const awardSectionSX: SxProps<Theme> = {
       },
     },
     "& .box-container": {
-      gap: "80px",
+      gap: "40px",
       width: "100%",
       display: "flex",
       flexWrap: "wrap",

@@ -22,7 +22,6 @@ interface IUserComment {
   name: string;
   rate: number;
   image: string;
-  carear: string;
   comment: string;
 }
 

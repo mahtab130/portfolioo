@@ -44,6 +44,7 @@ interface IResearchBox {
 interface IAwardBox {
   icon: TAny;
   title: string;
+  iconColor?: string;
   description: string;
 }
 
@@ -63,7 +64,6 @@ interface INoOptionsComponent {
 
 interface IContentSection<TSx = TAny> {
   image: string | JSX.Element;
-  title: string;
   content: JSX.Element;
   setting?: {
     sx?: TSx;

@@ -18,47 +18,51 @@ export const AboutMe = memo(() => {
             ]}
           />
         </Grid>
-        <Grid className="box-container">
-          <EducationBox
-            title={"تحصیــلات"}
-            description={[
-              {
-                subtitle: "دکتـــرای بـــرق",
-                title: "دانشـــگاه آزاد اسلامی مشهد",
-                years: ["1400", "1403"],
-              },
-              {
-                subtitle: "لیسانــس بـــرق",
-                title: "دانشـــگاه آزاد اسلامی",
-                years: ["1400", "1403"],
-              },
-              {
-                subtitle: "دیپلـــم ریاضــــی",
-                title: "مدرســـه شهید دلشاد",
-                years: ["1400", "1403"],
-              },
-            ]}
-          />
-          <EducationBox
-            title={"تجربــه کـــاری"}
-            description={[
-              {
-                subtitle: "دکتـــرای بـــرق",
-                title: "دانشـــگاه آزاد اسلامی مشهد",
-                years: ["1400", "1403"],
-              },
-              {
-                subtitle: "لیسانــس بـــرق",
-                title: "دانشـــگاه آزاد اسلامی",
-                years: ["1400", "1403"],
-              },
-              {
-                subtitle: "دیپلـــم ریاضــــی",
-                title: "مدرســـه شهید دلشاد",
-                years: ["1400", "1403"],
-              },
-            ]}
-          />
+        <Grid container md={12} className="box-container">
+          <Grid item md={5.5}>
+            <EducationBox
+              title={"تحصیــلات"}
+              description={[
+                {
+                  subtitle: "دکتـــرای بـــرق",
+                  title: "دانشـــگاه آزاد اسلامی مشهد",
+                  years: ["1400", "1403"],
+                },
+                {
+                  subtitle: "لیسانــس بـــرق",
+                  title: "دانشـــگاه آزاد اسلامی",
+                  years: ["1400", "1403"],
+                },
+                {
+                  subtitle: "دیپلـــم ریاضــــی",
+                  title: "مدرســـه شهید دلشاد",
+                  years: ["1400", "1403"],
+                },
+              ]}
+            />
+          </Grid>
+          <Grid item md={5.5}>
+            <EducationBox
+              title={"تجربــه کـــاری"}
+              description={[
+                {
+                  subtitle: "دکتـــرای بـــرق",
+                  title: "دانشـــگاه آزاد اسلامی مشهد",
+                  years: ["1400", "1403"],
+                },
+                {
+                  subtitle: "لیسانــس بـــرق",
+                  title: "دانشـــگاه آزاد اسلامی",
+                  years: ["1400", "1403"],
+                },
+                {
+                  subtitle: "دیپلـــم ریاضــــی",
+                  title: "مدرســـه شهید دلشاد",
+                  years: ["1400", "1403"],
+                },
+              ]}
+            />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

@@ -10,10 +10,12 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import {
-  // customerIcon,
-  // arrowLeftIcon,
-  // arrowRightIcon,
   arrowLeft2Icon,
+  // customerIcon,
+  arrowLeftIcon,
+  arrowRightIcon,
+  lineIcon,
+  qouteIcon,
 } from "../other/SvgComponent";
 import {
   SPACE_H2,
@@ -30,18 +32,17 @@ import {
 import { BlogCard } from "../common/BlogCard";
 import { ContentSection } from "../common/ContentSection";
 import { CustomRating } from "../controller/CustomRating";
-import { COLOR_SECEONDRY, COLOR_WHITE } from "../../helper/constants/colors";
+import {
+  COLOR_PRIMARY,
+  COLOR_SECEONDRY,
+  COLOR_WHITE,
+} from "../../helper/constants/colors";
 
 // import vectorYellow from "../../assets/images/vectors/vector-flower-orange.webp";
 
 export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
   const imageComponent = useCallback(
-    (src: string) => (
-      <>
-        <Box component="img" className="image" src={src} />
-        {/* <Box component="img" src={vectorYellow} className="vector-wrapper" /> */}
-      </>
-    ),
+    (src: string) => <Box component="img" className="image" src={src} />,
     []
   );
 
@@ -58,16 +59,14 @@ export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
         }}
         slidesPerView={1}
       >
-        {map(data, ({ carear, comment, id, image, name, rate }) => (
+        {map(data, ({ comment, id, image, name, rate }) => (
           <SwiperSlide key={id} className="swiper-slide">
             <ContentSection
               image={imageComponent(image)}
-              title={"Customers comments"}
               content={
                 <ContentComment
                   name={name}
                   rate={rate}
-                  carear={carear}
                   comment={comment}
                   classNames={{ next: "swiper-next", prev: "swiper-prev" }}
                 />
@@ -81,24 +80,24 @@ export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
 });
 
 const ContentComment = memo<IContentComment>(
-  ({ carear, comment, name, rate, classNames: { next, prev } }) => {
+  ({ comment, name, rate, classNames: { next, prev } }) => {
     return (
       <Grid className="content">
-        <CustomRating readOnly value={rate} />
-        <Typography className="description">{comment}</Typography>
         <Grid className="personal-info">
           <Typography className="name">
-            {/* {customerIcon()} */}
             {name}
+            {lineIcon()}
+            {qouteIcon()}
           </Typography>
-          <Typography className="job">{carear}</Typography>
         </Grid>
+        <Typography className="description">{comment}</Typography>
+        <CustomRating readOnly value={rate} />
         <Grid className="swip-buttons">
           <Box component="div" className={prev}>
-            {/* {arrowLeftIcon()}> */}
+            {arrowLeftIcon()}
           </Box>
           <Box component="div" className={next}>
-            {/* {arrowRightIcon()} */}
+            {arrowRightIcon()}
           </Box>
         </Grid>
       </Grid>
@@ -164,8 +163,8 @@ const SwiperSectionSx: SxProps<Theme> = {
         rowGap: SPACE_XM1,
         flexDirection: "column",
         "& .description": {
-          fontSize: FONT_BODY_MEDIUM2,
-          lineHeight: SPACE_M2,
+          fontSize: "16px",
+          color: "#848484",
         },
         "& .personal-info": {
           display: "flex",
@@ -173,6 +172,12 @@ const SwiperSectionSx: SxProps<Theme> = {
           "& .name": {
             fontSize: FONT_BODY_MEDIUM1,
             fontWeight: FONT_WEIGHT_BLOD,
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            "& svg:last-child": {
+              mt: "12px",
+            },
           },
           "& .job": {
             fontSize: FONT_BODY_MEDIUM2,
@@ -181,9 +186,14 @@ const SwiperSectionSx: SxProps<Theme> = {
         "& .swip-buttons": {
           display: "flex",
           gap: SPACE_XS1,
+          mt: "18px",
           "& .swiper-prev, .swiper-next": {
+            p: "10px",
+            height: "18px",
             cursor: "pointer",
+            borderRadius: "50%",
             transition: "all 0.4s",
+            backgroundColor: COLOR_PRIMARY,
             "&:hover": {
               transform: "scale(1.1)",
             },
@@ -191,6 +201,10 @@ const SwiperSectionSx: SxProps<Theme> = {
               opacity: "0.3",
               cursor: "default",
               filter: "brightness(0)",
+              backgroundColor: "#E9E9E9",
+              "& svg": {
+                fill: "#818181",
+              },
             },
           },
         },

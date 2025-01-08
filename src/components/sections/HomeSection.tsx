@@ -14,7 +14,7 @@ export const HomeSection = memo(() => {
     <Grid sx={homeSectionSX} className="home-wrapper">
       <AnimationSlideIn direction="right">
         <Grid container className="container">
-          <Grid item xs={12} md={5} className="texts-wrapper">
+          <Grid item xs={12} md={6} className="texts-wrapper">
             <CustomTitle
               pretitle="ســـلام"
               title={[
@@ -32,7 +32,7 @@ export const HomeSection = memo(() => {
               <CustomButton text="دریافت مشاوره" variant="contained" />
             </Grid>
           </Grid>
-          <Grid className="image-wrappper">
+          <Grid item xs={12} md={6} className="image-wrappper">
             <Box component="div">
               <Box component="img" src={ImageOfMe} />
             </Box>

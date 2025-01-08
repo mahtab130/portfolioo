@@ -15,8 +15,10 @@ export const EducationBox = memo<IEducationBox>(({ description, title }) => {
               <Typography className="subtitle">{subtitle}</Typography>
             </Grid>
             <Grid className="years-wrapper">
-              {map(years, (item) => (
-                <Typography className="year">{item}</Typography>
+              {map(years, (item, index) => (
+                <Typography className="year">
+                  {item} {index < years.length - 1 && " - "}
+                </Typography>
               ))}
             </Grid>
           </Grid>

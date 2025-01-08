@@ -257,7 +257,7 @@ export const customTitle = (color?: string): SxProps<Theme> => ({
     gap: "8px",
     display: "flex",
     fontSize: FONT_TITLE_MEDIUM,
-    fontWeight: "800",
+    fontWeight: "700",
     flexDirection: "row",
   },
 });
@@ -315,7 +315,7 @@ export const serviceBoxSX: SxProps<Theme> = {
   },
 };
 
-export const awardBoxSX: SxProps<Theme> = {
+export const awardBoxSX = (iconColor?: string): SxProps<Theme> => ({
   gap: "10px",
   width: "390px",
   display: "flex",
@@ -330,7 +330,7 @@ export const awardBoxSX: SxProps<Theme> = {
     borderRadius: "50%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: COLOR_PRIMARY,
+    backgroundColor: iconColor || COLOR_PRIMARY,
     boxShadow: "0px 0px 18px 0px #377DFF80",
     "& svg": {
       width: "30px",
@@ -338,6 +338,7 @@ export const awardBoxSX: SxProps<Theme> = {
     },
   },
   "& .title": {
+    mt: "14px",
     fontSize: "24px",
     fontWeight: "700",
   },
@@ -347,19 +348,19 @@ export const awardBoxSX: SxProps<Theme> = {
     fontWeight: "400",
     color: "#848484",
   },
-};
+});
 
 export const educationBoxSX: SxProps<Theme> = {
   gap: "34px",
-  width: "505px",
+  width: "100%",
   display: "flex",
-  maxWidth: "505px",
   flexDirection: "column",
   justifyContent: "space-between",
   "& .title": {
+    pb: "6px",
     width: "100%",
     fontSize: "28px",
-    fontWeight: "800",
+    fontWeight: "700",
     color: COLOR_PRIMARY,
     borderBottom: "1px solid #CFCFCF",
   },
@@ -412,10 +413,34 @@ export const researchBoxSX: SxProps<Theme> = {
   width: "400px",
   display: "flex",
   maxWidth: "400px",
+  cursor: "pointer",
+  transition: "0.3s",
   borderRadius: "34px",
+  position: "relative",
   flexDirection: "column",
   justifyContent: "space-between",
   boxShadow: "1px 1px 20px 6px #1018280F",
+  "&:hover": {
+    backgroundColor: "#3D3F3C",
+    borderBottomLeftRadius: "245px",
+    "& .title": {
+      color: COLOR_WHITE,
+    },
+    "& .description": {
+      color: "#C4C4C4",
+    },
+    "& .divider": {
+      color: "#7B7B7B",
+    },
+    "& .image": {
+      borderBottomLeftRadius: "317px",
+      boxShadow: "0px 0px 0px 6px #FFFFFF14",
+    },
+    "& .arrow-wrapper": {
+      visibility: "visible",
+    },
+  },
+
   "& .title": {
     px: "30px",
     fontSize: "28px",
@@ -432,14 +457,25 @@ export const researchBoxSX: SxProps<Theme> = {
   },
   "& .image": {
     mx: "12px",
-    borderRadius: "32px",
     height: "100%",
+    borderRadius: "32px",
     boxShadow: "0px 0px 0px 6px #377DFF14",
   },
   "& .divider": {
     my: "20px",
     height: "1px",
     backgroundColor: "#F1F1F1",
+  },
+  "& .arrow-wrapper": {
+    left: "0",
+    bottom: "0",
+    width: "120px",
+    height: "120px",
+    borderRadius: "50%",
+    visibility: "hidden",
+    position: "absolute",
+    backgroundColor: "#3D3F3C",
+    boxShadow: "0px 0px 0px 14px #FFFFFF",
   },
 };
 
@@ -450,7 +486,6 @@ export const contentProviderSX = (
   mx: "auto",
   width: "100%",
   display: "flex",
-  my: SPACE_H2,
   maxWidth: MAX_WIDTH,
   alignItems: "center",
   justifyContent: "space-between",
@@ -476,7 +511,7 @@ export const contentProviderSX = (
     position: "relative",
     justifyContent: reverse ? "start" : "end",
     "& .image": {
-      width: imageWidth || "620px",
+      width: imageWidth || "385px",
     },
   },
 });
