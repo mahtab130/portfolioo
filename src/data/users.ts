@@ -1,5 +1,6 @@
-import user1 from "../assets/images/data/user-comment.webp";
-import user2 from "../assets/images/home/image-faq.webp";
+// import user1 from "../assets/images/data/user-comment.webp";
+// import user2 from "../assets/images/home/image-faq.webp";
+import user2 from "../assets/images/home/comment.webp";
 
 export const usersComment: IUserComment[] = [
   {
@@ -8,7 +9,7 @@ export const usersComment: IUserComment[] = [
     carear: "Accountant",
     comment:
       "Welcome to our exquisite jewelry store,where elegance meets crasmanship Discover a dazzling array of fine jewelry, from  stunning diamond rings to elegant pearl necklaces.",
-    image: user1,
+    image: user2,
     rate: 3,
   },
   {

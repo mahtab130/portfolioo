@@ -22,6 +22,30 @@ interface ICustomTitle {
     iconColor?: string;
   };
 }
+interface IServiceBox {
+  icon: TAny;
+  title: string;
+  description: string;
+}
+interface IEducationBox {
+  title: string;
+  description: {
+    title: string;
+    subtitle: string;
+    years: string[];
+  }[];
+}
+interface IResearchBox {
+  url: string;
+  title: string;
+  image: string;
+  description: string;
+}
+interface IAwardBox {
+  icon: TAny;
+  title: string;
+  description: string;
+}
 
 interface IEmptyLastCenterJustify {
   xs?: number;

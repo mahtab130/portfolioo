@@ -32,14 +32,14 @@ import { ContentSection } from "../common/ContentSection";
 import { CustomRating } from "../controller/CustomRating";
 import { COLOR_SECEONDRY, COLOR_WHITE } from "../../helper/constants/colors";
 
-import vectorYellow from "../../assets/images/vectors/vector-flower-orange.webp";
+// import vectorYellow from "../../assets/images/vectors/vector-flower-orange.webp";
 
 export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
   const imageComponent = useCallback(
     (src: string) => (
       <>
         <Box component="img" className="image" src={src} />
-        <Box component="img" src={vectorYellow} className="vector-wrapper" />
+        {/* <Box component="img" src={vectorYellow} className="vector-wrapper" /> */}
       </>
     ),
     []

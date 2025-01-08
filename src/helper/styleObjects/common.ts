@@ -262,6 +262,187 @@ export const customTitle = (color?: string): SxProps<Theme> => ({
   },
 });
 
+export const serviceBoxSX: SxProps<Theme> = {
+  p: "20px",
+  gap: "16px",
+  width: "400px",
+  display: "flex",
+  maxWidth: "400px",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  borderBottomLeftRadius: "12px",
+  borderBottomRightRadius: "12px",
+  borderTop: `14px solid ${COLOR_PRIMARY}`,
+  boxShadow: " 0px 8px 8px -4px #10182808 ,0px 20px 24px -4px #10182814",
+  transition: "0.3s",
+  "&:hover": {
+    backgroundColor: COLOR_TEXT,
+    "& .title": {
+      color: COLOR_WHITE,
+    },
+    "& .description": {
+      color: "#C4C4C4",
+    },
+    "& .icon": {
+      borderColor: COLOR_WHITE,
+      "& svg, svg path": {
+        fill: COLOR_WHITE,
+        stroke: COLOR_WHITE,
+      },
+    },
+  },
+  "& .icon": {
+    width: "66px",
+    height: "66px",
+    borderRadius: "10px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    border: `1px solid ${COLOR_PRIMARY}`,
+    "& svg": {
+      width: "44px",
+      height: "44px",
+    },
+  },
+  "& .title": {
+    fontSize: "26px",
+    fontWeight: "700",
+  },
+  "& .description": {
+    fontSize: "16px",
+    fontWeight: "400",
+    color: COLOR_TEXT_WHITE,
+  },
+};
+
+export const awardBoxSX: SxProps<Theme> = {
+  gap: "10px",
+  width: "390px",
+  display: "flex",
+  maxWidth: "400px",
+  alignItems: "center",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  "& .icon": {
+    width: "70px",
+    height: "70px",
+    display: "flex",
+    borderRadius: "50%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: COLOR_PRIMARY,
+    boxShadow: "0px 0px 18px 0px #377DFF80",
+    "& svg": {
+      width: "30px",
+      height: "30px",
+    },
+  },
+  "& .title": {
+    fontSize: "24px",
+    fontWeight: "700",
+  },
+  "& .description": {
+    textAlign: "center",
+    fontSize: "16px",
+    fontWeight: "400",
+    color: "#848484",
+  },
+};
+
+export const educationBoxSX: SxProps<Theme> = {
+  gap: "34px",
+  width: "505px",
+  display: "flex",
+  maxWidth: "505px",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  "& .title": {
+    width: "100%",
+    fontSize: "28px",
+    fontWeight: "800",
+    color: COLOR_PRIMARY,
+    borderBottom: "1px solid #CFCFCF",
+  },
+  "& .description": {
+    // mt: "34px",
+    gap: "34px",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+
+    "& .container": {
+      width: "100%",
+      display: "flex",
+      alignItems: "start",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      "& .titles-wrapper": {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        "& .title-2": {
+          fontSize: "24px",
+          fontWeight: "700",
+        },
+        "& .subtitle": {
+          fontSize: "18px",
+          fontWeight: "600",
+          color: "#777777",
+        },
+      },
+      "& .years-wrapper": {
+        py: "4px",
+        gap: "2px",
+        px: "18px",
+        display: "flex",
+        borderRadius: "6px",
+        backgroundColor: "#F5F5F5",
+        "& .year": {
+          fontSize: "16px",
+          fontWeight: "600",
+        },
+      },
+    },
+  },
+};
+
+export const researchBoxSX: SxProps<Theme> = {
+  pt: "30px",
+  pb: "12px",
+  width: "400px",
+  display: "flex",
+  maxWidth: "400px",
+  borderRadius: "34px",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  boxShadow: "1px 1px 20px 6px #1018280F",
+  "& .title": {
+    px: "30px",
+    fontSize: "28px",
+    fontWeight: "700",
+    color: COLOR_PRIMARY,
+  },
+  "& .description": {
+    px: "30px",
+    gap: "34px",
+    width: "100%",
+    display: "flex",
+    color: "#848484",
+    flexDirection: "column",
+  },
+  "& .image": {
+    mx: "12px",
+    borderRadius: "32px",
+    height: "100%",
+    boxShadow: "0px 0px 0px 6px #377DFF14",
+  },
+  "& .divider": {
+    my: "20px",
+    height: "1px",
+    backgroundColor: "#F1F1F1",
+  },
+};
+
 export const contentProviderSX = (
   reverse?: boolean,
   imageWidth?: string

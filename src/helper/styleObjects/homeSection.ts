@@ -1,25 +1,12 @@
 import { SxProps, Theme } from "@mui/material";
 
-import {
-  SPACE_H2,
-  SPACE_XS1,
-  SPACE_D2,
-  SPACE_XM1,
-  SPACE_M2,
-  SPACE_S2,
-  SPACE_M3,
-  SPACE_D1,
-} from "../constants/spaces";
+import { SPACE_H2, SPACE_XS1, SPACE_D2 } from "../constants/spaces";
 import {
   COLOR_WHITE,
-  COLOR_PRIMARY,
-  COLOR_SECEONDRY,
   COLOR_BACKGROUND,
   COLOR_TEXT_WHITE,
 } from "../constants/colors";
 import {
-  FONT_BODY_LARGE,
-  FONT_LABEL_LARGE,
   FONT_WEIGHT_BLOD,
   FONT_BODY_MEDIUM2,
   FONT_HEADING_LARGE,
@@ -116,73 +103,120 @@ export const homeSectionSX: SxProps<Theme> = {
   },
 };
 
-export const productSectionSX: SxProps<Theme> = {
+export const servicesSectionSX: SxProps<Theme> = {
   width: "100%",
   height: "100vh",
   display: "flex",
-  position: "relative",
   alignItems: "center",
-  flexDirection: "column",
   justifyContent: "center",
-  "& .color-background": {
-    top: "0",
-    left: "0",
-    zIndex: "0",
-    width: "780px",
-    height: "580px",
-    position: "absolute",
-    backgroundColor: COLOR_PRIMARY,
-  },
-  "& .products-container": {
-    width: "100%",
-    maxWidth: MAX_WIDTH,
-    zIndex: "1",
-    "& .product-cards-wrapper": {
-      mt: SPACE_XM1,
-      width: "100%",
-      display: "flex",
-      justifyContent: "space-between",
-    },
-  },
-};
-
-export const categorySectionSX: SxProps<Theme> = {
-  width: "100%",
-  my: SPACE_H2,
-  display: "flex",
-  minHeight: "530px",
-  justifyContent: "center",
-  "& .category-container": {
+  "& .container": {
     width: "100%",
     display: "flex",
     maxWidth: MAX_WIDTH,
-    height: "fit-content",
     flexDirection: "column",
-    "& .category-cards-wrapper": {
+    gap: "46px",
+    "& .title-wrapper": {
+      width: "100%",
       display: "flex",
       justifyContent: "space-between",
-      mt: SPACE_H2,
-      rowGap: SPACE_M2,
+      "& .button-wrapper": {
+        display: "flex",
+        alignItems: "end",
+      },
+    },
+    "& .box-container": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
     },
   },
 };
 
-export const bestSellingSectionSX: SxProps<Theme> = {
+export const aboutMeSectionSX: SxProps<Theme> = {
   width: "100%",
   height: "100vh",
   display: "flex",
   alignItems: "center",
-  flexDirection: "column",
   justifyContent: "center",
-  backgroundColor: COLOR_SECEONDRY,
   "& .container": {
-    zIndex: "1",
     width: "100%",
+    display: "flex",
     maxWidth: MAX_WIDTH,
-    "& .product-cards-wrapper": {
-      mt: SPACE_XM1,
+    flexDirection: "column",
+    gap: "46px",
+    "& .title-wrapper": {
       width: "100%",
       display: "flex",
+      justifyContent: "space-between",
+      "& .button-wrapper": {
+        display: "flex",
+        alignItems: "end",
+      },
+    },
+    "& .box-container": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+};
+
+export const researchSectionSX: SxProps<Theme> = {
+  width: "100%",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "& .container": {
+    width: "100%",
+    display: "flex",
+    maxWidth: MAX_WIDTH,
+    flexDirection: "column",
+    gap: "46px",
+    "& .title-wrapper": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      "& .button-wrapper": {
+        display: "flex",
+        alignItems: "end",
+      },
+    },
+    "& .box-container": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+};
+
+export const awardSectionSX: SxProps<Theme> = {
+  width: "100%",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "#EFF5FF",
+  "& .container": {
+    width: "100%",
+    display: "flex",
+    maxWidth: MAX_WIDTH,
+    flexDirection: "column",
+    gap: "46px",
+    "& .title-wrapper": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      "& .button-wrapper": {
+        display: "flex",
+        alignItems: "end",
+      },
+    },
+    "& .box-container": {
+      gap: "80px",
+      width: "100%",
+      display: "flex",
+      flexWrap: "wrap",
       justifyContent: "space-between",
     },
   },
@@ -196,89 +230,4 @@ export const blogSX: SxProps<Theme> = {
   maxWidth: MAX_WIDTH,
   flexDirection: "column",
   justifyContent: "center",
-};
-
-export const contentServicesSX: SxProps<Theme> = {
-  width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  mt: SPACE_XS1,
-  rowGap: "14px",
-  "& .item": {
-    display: "flex",
-    justifyContent: "space-between",
-    "&:last-child": {
-      "& .number-wrapper:before": {
-        display: "none",
-      },
-    },
-    "& .number-wrapper": {
-      position: "relative",
-      "&:before": {
-        height: "45px",
-        content: '""',
-        top: "52px",
-        left: "24px",
-        width: "1px",
-        borderRight: "1px dashed" + COLOR_SECEONDRY,
-        position: "absolute",
-      },
-      "& .number": {
-        width: "50px",
-        height: "50px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: "50%",
-        border: "1px dashed" + COLOR_SECEONDRY,
-        "& span": {
-          width: "40px",
-          height: "40px",
-          fontWeight: FONT_WEIGHT_BLOD,
-          color: COLOR_WHITE,
-          textAlign: "center",
-          borderRadius: "50%",
-          fontSize: FONT_BODY_LARGE,
-          backgroundColor: COLOR_SECEONDRY,
-        },
-      },
-    },
-    "& .texts-wrapper": {
-      mt: SPACE_XS1,
-      display: "flex",
-      flexDirection: "column",
-      rowGap: SPACE_S2,
-      "& .title": {
-        fontSize: FONT_BODY_MEDIUM2,
-        fontWeight: FONT_WEIGHT_BLOD,
-      },
-      "& .description": {
-        lineHeight: SPACE_M3,
-        fontSize: FONT_LABEL_LARGE,
-      },
-    },
-  },
-};
-
-export const aboutUsSectionSX: SxProps<Theme> = {
-  "& .right-section": {
-    "& .vector": {
-      right: "-130px",
-      top: "-70px",
-    },
-  },
-  "& .description": {
-    mt: SPACE_M2,
-    lineHeight: "22px",
-    fontSize: FONT_BODY_MEDIUM2,
-  },
-  "& .button": {
-    mt: SPACE_D2,
-    px: SPACE_D1,
-    py: SPACE_XS1,
-    "&:hover": {
-      color: COLOR_SECEONDRY,
-      outline: "1px solid" + COLOR_SECEONDRY,
-    },
-  },
 };

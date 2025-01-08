@@ -76,3 +76,7 @@ const buttonSX = (customColor?: string): SxProps<Theme> => ({
     },
   },
 });
+
+export const CustomButtonV2 = memo<TCustomButton>(({ text, ...props }) => {
+  return <CustomButton text={text} {...props} />;
+});
