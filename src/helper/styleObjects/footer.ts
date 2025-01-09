@@ -1,23 +1,18 @@
 import { SxProps, Theme } from "@mui/material";
 
 import { COLOR_WHITE, COLOR_PRIMARY } from "../constants/colors";
-import {
-  FONT_BODY_SMALL,
-  FONT_LABEL_LARGE,
-  FONT_BODY_MEDIUM2,
-  FONT_WEIGHT_BLOD,
-} from "../constants/fonts";
+import { FONT_LABEL_LARGE, FONT_BODY_MEDIUM2 } from "../constants/fonts";
 import {
   SPACE_H2,
   SPACE_D2,
   SPACE_M1,
-  SPACE_M3,
   SPACE_H3,
   SPACE_H1,
 } from "../constants/spaces";
 
 export const footerSX: SxProps<Theme> = {
-  py: SPACE_D2,
+  pt: SPACE_H3,
+  pb: SPACE_D2,
   mt: SPACE_H2,
   px: SPACE_H3,
   width: "100%",
@@ -29,16 +24,21 @@ export const footerSX: SxProps<Theme> = {
     display: "flex",
     justifyContent: "space-between",
     "& .social-content": {
+      gap: "26px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
       "& .logo": {
         width: "150px",
       },
+      "& .name": {
+        fontSize: "20px",
+        color: COLOR_WHITE,
+        fontWeight: "700",
+      },
       "& .description": {
-        fontWeight: FONT_WEIGHT_BLOD,
-        lineHeight: SPACE_M3,
-        color: "#F1F1F1",
+        fontWeight: "400",
+        color: "#ECECEC",
         fontSize: FONT_LABEL_LARGE,
       },
       "& .socail-boxes": {
@@ -53,7 +53,7 @@ export const footerSX: SxProps<Theme> = {
           borderRadius: "50%",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: COLOR_PRIMARY,
+          backgroundColor: "#5A94FF",
           "&:hover": {
             "& svg": {
               transition: "all 0.4s",
@@ -69,18 +69,18 @@ export const footerSX: SxProps<Theme> = {
       flexDirection: "column",
       "& .title": {
         lineHeight: SPACE_H1,
-        fontWeight: FONT_WEIGHT_BLOD,
+        fontWeight: "600",
         color: COLOR_WHITE,
         fontSize: FONT_BODY_MEDIUM2,
       },
       "& .text": {
         cursor: "pointer",
-        fontWeight: FONT_WEIGHT_BLOD,
+        fontWeight: "400",
         transition: "all 0.4s",
         color: "#F1F1F1",
         fontSize: FONT_LABEL_LARGE,
         "&:hover": {
-          color: COLOR_PRIMARY,
+          color: COLOR_WHITE,
         },
       },
     },
@@ -88,13 +88,28 @@ export const footerSX: SxProps<Theme> = {
     "& .send-email-content": {
       "& .title": {
         mb: SPACE_M1,
-        fontWeight: FONT_WEIGHT_BLOD,
-        color: COLOR_WHITE,
-        fontSize: FONT_BODY_MEDIUM2,
+        fontWeight: "400",
+        color: "#F1F1F1",
+        fontSize: "16px",
       },
       "& .email-input": {
         "& .MuiInputBase-root": {
           backgroundColor: COLOR_WHITE,
+        },
+      },
+      "& .logo-content": {
+        mt: "35px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "end",
+        "& .logo-wrapper": {
+          width: "110px",
+          height: "110px",
+          backgroundColor: COLOR_WHITE,
+          borderRadius: "10px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         },
       },
     },
@@ -103,22 +118,12 @@ export const footerSX: SxProps<Theme> = {
     mt: SPACE_D2,
     pt: SPACE_D2,
     width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    borderTop: "1px solid" + COLOR_PRIMARY,
+    borderTop: "1px solid #88B2FF",
     "& .text": {
-      display: "flex",
-      fontWeight: FONT_WEIGHT_BLOD,
-      gap: "4px",
-      alignItems: "center",
+      fontWeight: "600",
+      textAlign: "center",
       color: "#F1F1F1",
-      fontSize: FONT_BODY_SMALL,
-      "& span": {
-        color: COLOR_PRIMARY,
-      },
-      "& .icon": {
-        height: "18px",
-      },
+      fontSize: "14px",
     },
   },
 };

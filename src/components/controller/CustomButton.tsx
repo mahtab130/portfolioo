@@ -71,6 +71,9 @@ const buttonSX = (customColor?: string): SxProps<Theme> => ({
     border: `1px solid ${
       customColor == COLOR_TEXT_GRAY ? COLOR_TEXT_WHITE : customColor
     }`,
+    "& .MuiButton-icon": {
+      marginRight: "20px",
+    },
     "&:hover": {
       backgroundColor: `${customColor}10`,
     },

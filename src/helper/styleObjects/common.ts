@@ -227,13 +227,15 @@ export const blogCardSX: SxProps<Theme> = {
       display: "flex",
       justifyContent: "flex-end",
       "& .button": {
-        p: "0",
+        p: "4px",
         width: "fit-content",
-        color: COLOR_SECEONDRY,
         fontSize: FONT_LABEL_LARGE,
         textTransform: "capitalize",
         "&:hover": {
           outline: "none",
+        },
+        "& .MuiButton-icon": {
+          marginRight: "15px",
         },
       },
     },

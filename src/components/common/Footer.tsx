@@ -14,11 +14,11 @@ import {
 } from "../other/SvgComponent";
 import { navbarValues } from "../../data/other";
 import { AnimationSlideIn } from "./AnimateComponent";
-import { CustomImage } from "../controller/CustomImage";
 import { footerSX } from "../../helper/styleObjects/footer";
 import { CustomTextfield } from "../controller/CustomTextfield";
 
-import logo from "../../assets/images/vectors/logo.webp";
+import logo from "../../assets/images/vectors/logo-footer.png";
+import { CustomImage } from "../controller/CustomImage";
 
 export const Footer = memo(() => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export const Footer = memo(() => {
       <Grid container className="content">
         <Grid item md={3.3} className="social-content">
           <AnimationSlideIn direction="left">
-            <CustomImage src={logo} className="logo" />
+            <Typography className="name">محمد معطر</Typography>
           </AnimationSlideIn>
           <AnimationSlideIn direction="left">
             <Typography className="description">
@@ -85,6 +85,11 @@ export const Footer = memo(() => {
                 endIcon={sendIcon()}
                 setting={{ noBorder: true, isIconButton: true }}
               />
+              <Grid className="logo-content">
+                <Grid className="logo-wrapper">
+                  <CustomImage src={logo} className="logo" />
+                </Grid>
+              </Grid>
             </>
           </AnimationSlideIn>
         </Grid>
@@ -97,9 +102,9 @@ export const Footer = memo(() => {
 });
 
 const socailIcons = [
-  instagramIcon(),
-  faceBookIcon(),
-  twitterIcon(),
-  messengerIcon(),
   youtubeIcon(),
+  messengerIcon(),
+  twitterIcon(),
+  faceBookIcon(),
+  instagramIcon(),
 ];

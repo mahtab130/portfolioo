@@ -10,9 +10,10 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import {
-  arrowLeft2Icon,
+  // arrowLeft2Icon,
   // customerIcon,
   arrowLeftIcon,
+  arrowRight2Icon,
   arrowRightIcon,
   lineIcon,
   qouteIcon,
@@ -32,11 +33,7 @@ import {
 import { BlogCard } from "../common/BlogCard";
 import { ContentSection } from "../common/ContentSection";
 import { CustomRating } from "../controller/CustomRating";
-import {
-  COLOR_PRIMARY,
-  COLOR_SECEONDRY,
-  COLOR_WHITE,
-} from "../../helper/constants/colors";
+import { COLOR_PRIMARY, COLOR_WHITE } from "../../helper/constants/colors";
 
 // import vectorYellow from "../../assets/images/vectors/vector-flower-orange.webp";
 
@@ -132,8 +129,8 @@ export const CustomSwiperBlog = memo<{ data: IBlogCard[] }>(({ data }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Box className="swiper-prev">{arrowLeft2Icon(COLOR_WHITE)}</Box>
-      <Box className="swiper-next">{arrowLeft2Icon(COLOR_WHITE)}</Box>
+      <Box className="swiper-prev">{arrowRight2Icon(COLOR_WHITE)}</Box>
+      <Box className="swiper-next">{arrowRight2Icon(COLOR_WHITE)}</Box>
     </Grid>
   );
 });
@@ -223,7 +220,7 @@ const customSwiperBlogSX: SxProps<Theme> = {
     display: "flex",
     justifyContent: "center",
     "& .swiper-wrapper": {
-      height: "530px",
+      height: "500px",
       justifyContent: "space-around",
     },
     "& .swiper-slide": {
@@ -241,7 +238,7 @@ const customSwiperBlogSX: SxProps<Theme> = {
     position: "absolute",
     transition: "all 0.4s",
     justifyContent: "center",
-    backgroundColor: COLOR_SECEONDRY,
+    backgroundColor: COLOR_PRIMARY,
     "& svg": {
       ml: "2px",
     },
@@ -274,11 +271,11 @@ const customSwiperBlogSX: SxProps<Theme> = {
       height: "8px",
       transform: "scale(1) !important",
       "&.swiper-pagination-bullet-active": {
-        backgroundColor: COLOR_SECEONDRY,
+        backgroundColor: COLOR_PRIMARY,
       },
       "& .swiper-pagination-bullet-active-next , .swiper-pagination-bullet-active-prev":
         {
-          backgroundColor: COLOR_SECEONDRY + "47",
+          backgroundColor: COLOR_PRIMARY + "47",
         },
     },
   },
