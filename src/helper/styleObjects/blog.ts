@@ -14,7 +14,6 @@ import {
   FONT_BODY_SMALL,
   FONT_BODY_LARGE,
   FONT_WEIGHT_BLOD,
-  FONT_TITLE_LARGE,
   FONT_BODY_MEDIUM2,
 } from "../constants/fonts";
 import { MAX_WIDTH } from "../constants/static";
@@ -22,14 +21,6 @@ import { COLOR_TEXT, COLOR_SECEONDRY, COLOR_WHITE } from "../constants/colors";
 
 export const contentBlogSX: SxProps<Theme> = {
   width: "100%",
-  "& .description": {
-    mb: SPACE_M1,
-    mt: SPACE_M1,
-    width: "100%",
-    color: "#6A6A6A",
-    fontSize: FONT_BODY_MEDIUM2,
-    fontWeight: FONT_WEIGHT_BLOD,
-  },
   "& .title": {
     mt: SPACE_M1,
     fontSize: FONT_BODY_LARGE,
@@ -76,35 +67,34 @@ export const contentBlogSX: SxProps<Theme> = {
   },
 };
 
-export const blogDetailSX = (image?: string): SxProps<Theme> => ({
+export const blogDetailSX: SxProps<Theme> = {
   mx: "auto",
   pt: SPACE_H3,
   my: SPACE_H2,
   width: "100%",
   maxWidth: MAX_WIDTH,
+  justifyContent: "space-between",
   "& .container": {
+    mt: "28px",
     width: "100%",
     display: "flex",
+    p: "28px",
     flexDirection: "column",
-    "& .image-background": {
+    background: COLOR_WHITE,
+    boxShadow: "1px 1px 20px 6px #10182808",
+    borderRadius: "10px",
+    border: "1px solid #ECECEC",
+
+    "& .image": {
+      mt: "28px",
       width: "100%",
-      mt: SPACE_M2,
-      px: SPACE_H3,
-      height: "450px",
-      display: "flex",
-      borderRadius: "12px",
-      alignItems: "center",
-      backgroundSize: "cover",
-      justifyContent: "center",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      background: ` linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 100%,rgba(0, 0, 0, 0.65) 100%), url(${image})`,
-      "& .title": {
-        color: COLOR_WHITE,
-        textAlign: "center",
-        fontSize: FONT_TITLE_LARGE,
-        fontWeight: FONT_WEIGHT_BLOD,
-      },
+      height: "293px",
+      borderRadius: "8px !important",
+    },
+    "& .title": {
+      color: COLOR_TEXT,
+      fontSize: "28px",
+      fontWeight: "600",
     },
     "& .description": {
       width: "100%",
@@ -131,7 +121,28 @@ export const blogDetailSX = (image?: string): SxProps<Theme> => ({
       },
     },
   },
-});
+  "& .blogs-related": {
+    pr: "40px",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    gap: "30px",
+    "& .title-blog": {
+      textAlign: "start",
+      mt: "68px",
+      width: "100%",
+      fontSize: "28px",
+      fontWeight: "600",
+      alignItems: "end",
+      gap: "10px",
+      display: "flex",
+      "& .vector": {
+        height: "31px",
+        width: "43px",
+      },
+    },
+  },
+};
 
 export const blogSX: SxProps<Theme> = {
   width: "100%",

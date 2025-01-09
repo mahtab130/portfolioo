@@ -5,10 +5,10 @@ import { Box, Grid, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { navbarValues } from "../../data/other";
+import { CustomButton } from "../controller/CustomButton";
 import { navbarSX } from "../../helper/styleObjects/navbar";
 
 import logo from "../../assets/images/vectors/logo.webp";
-import { CustomButton } from "../controller/CustomButton";
 
 export const Navbar = memo(() => {
   const ref = useRef(null);

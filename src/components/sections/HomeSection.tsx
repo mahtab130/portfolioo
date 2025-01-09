@@ -2,12 +2,14 @@ import { memo } from "react";
 
 import { Box, Grid, Typography } from "@mui/material";
 
+import { CustomTitle } from "../common/CustomTitle";
+import { CustomImage } from "../controller/CustomImage";
 import { CustomButton } from "../controller/CustomButton";
 import { AnimationSlideIn } from "../common/AnimateComponent";
 import { homeSectionSX } from "../../helper/styleObjects/homeSection";
-import { CustomTitle } from "../common/CustomTitle";
 
 import ImageOfMe from "../../assets/images/home/home-man.webp";
+import vector from "../../assets/images/vectors/arrow-home.webp";
 
 export const HomeSection = memo(() => {
   return (
@@ -29,7 +31,10 @@ export const HomeSection = memo(() => {
               کاری، به دفتر خود اعتبـــار و موفقیــت بیشتری بخشم.
             </Typography>
             <Grid className="button-wrapper">
-              <CustomButton text="دریافت مشاوره" variant="contained" />
+              <Grid>
+                <CustomButton text="دریافت مشاوره" variant="contained" />
+              </Grid>
+              <CustomImage className="vector" src={vector} />
             </Grid>
           </Grid>
           <Grid item xs={12} md={6} className="image-wrappper">

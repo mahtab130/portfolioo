@@ -9,6 +9,8 @@
 // import image9 from "../assets/images/data/blog-page-7.webp";
 
 import image1 from "../assets/images/home/blog1.webp";
+import image2 from "../assets/images/home/blog2.webp";
+import image3 from "../assets/images/home/blog3.webp";
 
 export const blogs: IBlogCard[] = [
   {
@@ -23,14 +25,14 @@ export const blogs: IBlogCard[] = [
     title: "دوره های آموزشی",
     description:
       "لـــورم ایپسوم مدیــــر یک دفتـــــــــــــر با تجربــالـــــــــــهام ‌بــخش با سابـــــــقه‌ای بیش از 5 سال درحـــــوزه مدیری مــــــدیریت بیشتـــــــری در این بخشم . ",
-    image: image1,
+    image: image2,
   },
   {
     id: 3,
     title: "دوره های آموزشی",
     description:
       "لـــورم ایپسوم مدیــــر یک دفتـــــــــــــر با تجربــالـــــــــــهام ‌بــخش با سابـــــــقه‌ای بیش از 5 سال درحـــــوزه مدیری مــــــدیریت بیشتـــــــری در این بخشم . ",
-    image: image1,
+    image: image3,
   },
   {
     id: 4,

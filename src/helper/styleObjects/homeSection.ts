@@ -6,10 +6,8 @@ import {
   COLOR_BACKGROUND,
   COLOR_TEXT_WHITE,
 } from "../constants/colors";
-import { FONT_WEIGHT_BLOD, FONT_BODY_MEDIUM2 } from "../constants/fonts";
-
-// import backgroundImage from "../../assets/images/home/background-image.webp";
 import { MAX_WIDTH } from "../constants/static";
+import { FONT_WEIGHT_BLOD, FONT_BODY_MEDIUM2 } from "../constants/fonts";
 
 export const homeSectionSX: SxProps<Theme> = {
   width: "100%",
@@ -54,13 +52,11 @@ export const homeSectionSX: SxProps<Theme> = {
       },
       "& .button-wrapper": {
         mt: SPACE_D2,
-        zIndex: "22",
-      },
-      "& .vector-arrow-img": {
-        left: "70px",
-        width: "470px",
-        bottom: "-160px",
-        position: "absolute",
+        display: "flex",
+        "& .vector": {
+          width: "496px",
+          mt: "-16px",
+        },
       },
     },
     "& .image-wrappper": {
@@ -131,9 +127,19 @@ export const aboutMeSectionSX: SxProps<Theme> = {
       width: "100%",
       display: "flex",
       justifyContent: "space-between",
-      "& .button-wrapper": {
+
+      "& .vectors-wrapper": {
+        width: "115px",
         display: "flex",
-        alignItems: "end",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        "& img": {
+          width: "50px",
+          height: "50px",
+          "&:last-child": {
+            mr: "60px",
+          },
+        },
       },
     },
     "& .box-container": {

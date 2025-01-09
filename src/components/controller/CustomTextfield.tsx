@@ -85,6 +85,7 @@ export const CustomTextfield = memo<TCustomTextfield>(
           {...props}
           InputProps={{
             startAdornment: <>{startIcon}</>,
+            endAdornment: <>{endIcon}</>,
           }}
         />
       </Grid>
@@ -104,7 +105,7 @@ const textfieldSX = (
     "& .MuiInputBase-root": {
       height: "50px",
       overflow: "hidden",
-      pr: hasIcon ? "0px" : undefined,
+      pl: hasIcon ? "0px" : undefined,
       borderRadius: "12px",
       "& fieldset": {
         border: noBorder
@@ -131,21 +132,7 @@ const textfieldSX = (
         },
       },
     },
-    "& .end-icon": {
-      width: "60px",
-      height: "50px",
-      display: "flex",
-      cursor: "pointer",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: COLOR_PRIMARY,
-      "&:hover": {
-        "& svg": {
-          transition: "all 0.4s",
-          transform: "scale(1.2)",
-        },
-      },
-    },
+
     "& .pass-icon": {
       height: "18px",
       p: SPACE_S4,

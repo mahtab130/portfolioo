@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { find } from "lodash";
+import { find, map } from "lodash";
 import { useParams } from "react-router-dom";
 import { Box, Grid, Typography } from "@mui/material";
 
@@ -9,6 +9,9 @@ import { blogs } from "../../../data/blogs";
 import { AnimationSlideIn } from "../../common/AnimateComponent";
 import { CustomBreadcrumbs } from "../../controller/CustomBreadcrumbs";
 import { blogDetailSX, contentBlogSX } from "../../../helper/styleObjects/blog";
+import { CustomImage } from "../../controller/CustomImage";
+import vector from "../../../assets/images/vectors/orange-arrow.webp";
+import { BlogCard } from "../../common/BlogCard";
 
 // import image1 from "../../../assets/images/blogs/blog-detail-1.webp";
 // import image2 from "../../../assets/images/blogs/blog-detail-2.webp";
@@ -20,39 +23,43 @@ export const BlogDetail: FC = () => {
   const { image, title } =
     find(blogs, ({ id }) => id == Number(currentId)) ?? {};
 
-  // const otherInfo = [
-  //   { name: writer, title: "Writer", icon: bookIcon() },
-  //   { name: date, title: "", icon: dateIcon() },
-  //   { name: studyTime, title: "Study time", icon: clockIcon() },
-  // ];
-
   return (
     <AnimationSlideIn direction={"left"}>
-      <Grid sx={blogDetailSX(image)}>
-        <CustomBreadcrumbs
-          breadcrumbs={[
-            { name: "Home", link: "/" },
-            { name: "Blogs", link: "/blogs" },
-            { name: title || "", link: "/" },
-          ]}
-        />
-        <Grid className="container">
-          <Grid className="image-background">
+      <Grid container sx={blogDetailSX}>
+        <Grid md={8}>
+          <CustomBreadcrumbs
+            breadcrumbs={[
+              { name: "خانــه", link: "/" },
+              { name: "بـــــلاگ", link: "/blogs" },
+              { name: title || "", link: "/" },
+            ]}
+          />
+          <Grid className="container">
             <Typography className="title">
-              Tips for distinguishing real rhinestones from fake ones
+              استراتژی‌های مؤثر برای یادگیری بهتر
             </Typography>
+            <CustomImage className="image" src={image || ""} />
+            <ContentBlog />
           </Grid>
-          {/* <Grid className="other-info-wrapper">
-            {map(otherInfo, ({ name, icon, title }, index) => (
-              <Grid className="item" key={index}>
-                {icon}
-                <Typography className="name">
-                  {title} : {name}
-                </Typography>
+        </Grid>
+        <Grid md={3.7} className="blogs-related">
+          <Typography className="title-blog">
+            مقالات مرتبط <CustomImage className="vector" src={vector} />
+          </Typography>
+          {map(
+            blogs.slice(0, 3),
+            ({ description, id, image, title }, index) => (
+              <Grid key={index + id}>
+                <BlogCard
+                  id={id}
+                  image={image}
+                  title={title}
+                  description={description}
+                  navigateString={`${id}`}
+                />
               </Grid>
-            ))}
-          </Grid> */}
-          <ContentBlog />
+            )
+          )}
         </Grid>
       </Grid>
     </AnimationSlideIn>
@@ -62,86 +69,26 @@ export const BlogDetail: FC = () => {
 const ContentBlog = memo(() => {
   return (
     <Grid sx={contentBlogSX}>
-      <Typography className="description">
-        Determining the authenticity of jewelry usually requires precision and
-        experience. For this purpose, different points should be considered. The
-        first point is to check the label and brand of jewelry. Original jewelry
-        usually has authentic brands and complete manufacturer information, such
-        as brand name, metal grade, weight, etc. In contrast, counterfeit
-        jewelry often lacks this information and has invalid brands.The second
-        thing is to check the weight and appearance of the jewelry. Original
-        ornaments are usually heavier and of better quality. Also, their
-        appearance details such as design, how to connect parts and overall
-        beauty can be different from fake samples. The third solution is to
-        conduct a magnetic test. Original gold and silver jewelry are not
-        magnetic. In contrast, some metals used in counterfeit jewelry may have
-        magnetic properties. The fourth is the acid test. Placing a drop of acid
-        on a piece of jewelry can help determine authenticity. Original jewelry
-        usually does not react much to acid. In addition to these cases,
-        checking labeling and manufacturing quality can also be effective in
-        detecting authenticity. In case of doubt, it is always better to buy
-        from reliable and experienced sellers or consult with relevant experts.
-      </Typography>
-      <Typography className="title">
-        Well, here is a complete list of ways to distinguish genuine from fake
-        jewelry:
-      </Typography>
       <Grid className="bullet-point-wrapper">
         <Typography className="text black">
-          1.Checking product locks and straps:
+          1. برنامه‌ریزی و زمان‌بندی
         </Typography>
         <Typography className="text">
           <Box component="span"></Box>
-          Original jewelry usually has quality clasps and clasps and neat
-          construction.
-        </Typography>
-        <Typography className="text">
-          <Box component="span"></Box>
-          In fake jewelry, the clasps are usually weaker and more messy.
-        </Typography>
-      </Grid>
-      <Grid className="image1-wrapper">
-        {/* <CustomImage className="image" src={image1} /> */}
-      </Grid>
-      <Grid className="bullet-point-wrapper">
-        <Typography className="text black">2.Product weight:</Typography>
-        <Typography className="text">
-          Genuine jewelry usually weighs more than counterfeits. This is due to
-          the use of higher quality materials in original jewelry.
+          تعیین اهداف مشخص: اهداف SMART (خاص، قابل اندازه‌گیری، قابل دستیابی،
+          مرتبط و زمان‌بندی‌شده) را تعیین کنید. به عنوان مثال، "من می‌خواهم در
+          این ماه دو فصل از کتاب را مطالعه کنم." ایجاد برنامه مطالعه: از تقویم
+          یا اپلیکیشن‌های مدیریت زمان استفاده کنید. زمان‌های خاصی را برای مطالعه
+          هر درس اختصاص دهید و به آن پایبند باشید
         </Typography>
       </Grid>
       <Grid className="bullet-point-wrapper">
-        <Typography className="text black">
-          3.Examining brand signs and logos:
-        </Typography>
+        <Typography className="text black">2. یادداشت‌برداری مؤثر</Typography>
         <Typography className="text">
-          In original jewelry, brand marks and logos are clear and precise. In
-          fake samples, these signs are usually of lower quality and fade
-        </Typography>
-      </Grid>
-      <Grid className="bullet-point-wrapper">
-        <Typography className="text black">4.Magnetic test:</Typography>
-        <Typography className="text">
-          Examining the degree of magnetism is one of the most important methods
-          for distinguishing genuine jewelry from fake jewelry. Let me explain
-          this method further:
-        </Typography>
-        <Typography className="text">
-          1. Hold the magnet close to the piece of jewel
-        </Typography>
-        <Typography className="text">
-          2. If the piece is attracted to a magnet and drawn to it, the metal
-          used in it is probably magnetic.
-        </Typography>
-        <Typography className="text">
-          3. Original jewelry made of high quality metals is usually non-magneti
-        </Typography>
-        <Typography className="text">
-          4. In contrast, counterfeit jewelry made of cheaper metals is usually
-          magnetic and will be attracted to a magnet. This test is very simple
-          and quick and can help you identify the original jewelry. Just be
-          aware that some genuine jewelry may also contain some magnetic metal,
-          but the amount of absorption is usually much lower than counterfeits.
+          استفاده از روش‌های مختلف یادداشت‌برداری: روش Cornell شامل تقسیم صفحه
+          به سه بخش (نکات کلیدی، توضیحات و خلاصه) است که به سازماندهی اطلاعات
+          کمک می‌کند. خلاصه‌نویسی: پس از مطالعه هر فصل، یک خلاصه بنویسید. این
+          کار به درک بهتر و یادآوری مطالب کمک می‌
         </Typography>
       </Grid>
       <Grid container xs={12} className="image2-wrapper">
@@ -149,43 +96,8 @@ const ContentBlog = memo(() => {
           {/* <CustomImage className="image" src={image2} /> */}
         </Grid>
         <Grid item xs={12} md={5.9}>
-          {/* <CustomImage className="image" src={image3} /> */}
+          {/* <Custommage className="image" src={image3} /> */}
         </Grid>
-      </Grid>
-      <Grid className="bullet-point-wrapper">
-        <Typography className="text black">
-          5.Checking light reflection:
-        </Typography>
-        <Typography className="text">
-          Genuine jewelry usually reflects light better than counterfeits. This
-          is due to the use of higher quality materials.
-        </Typography>
-      </Grid>
-      <Grid className="bullet-point-wrapper">
-        <Typography className="text black">
-          6.Appearance quality check:
-        </Typography>
-        <Typography className="text">
-          Original ornaments usually have a polished and smooth appearance.In
-          counterfeit samples, the appearance of the product usually has
-          defects.
-        </Typography>
-      </Grid>
-      <Grid className="conclusion">
-        <Typography className="title">Conclusion</Typography>
-        <Typography className="description">
-          Genuine jewelry usually has quality, well-made clasps and clasps,
-          while fake jewelry has weaker, messier clasps. Also, genuine jewelry
-          weighs more than fakes because it is made of higher quality
-          materials.In genuine jewelry, brand markings and logos are very clear
-          and precise, but in fakes, these markings are usually lower quality
-          and faded. Also, genuine jewelry is non-magnetic, while counterfeit
-          jewelry is typically magnetic and attracted to a magnet.In terms of
-          light reflection, genuine jewelry usually reflects better than
-          counterfeits. In addition, genuine jewelry has a polished and smooth
-          appearance, while the appearance of counterfeit products usually has
-          imperfections.
-        </Typography>
       </Grid>
     </Grid>
   );

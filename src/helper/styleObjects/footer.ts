@@ -74,6 +74,7 @@ export const footerSX: SxProps<Theme> = {
         fontSize: FONT_BODY_MEDIUM2,
       },
       "& .text": {
+        width: "fit-content",
         cursor: "pointer",
         fontWeight: "400",
         transition: "all 0.4s",
@@ -94,7 +95,26 @@ export const footerSX: SxProps<Theme> = {
       },
       "& .email-input": {
         "& .MuiInputBase-root": {
+          border: "1px solid  #88B2FF",
+          "& .MuiInputBase-input": {
+            color: COLOR_WHITE,
+            fontWeight: "400",
+          },
+        },
+        "& .end-icon": {
+          width: "60px",
+          height: "50px",
+          display: "flex",
+          cursor: "pointer",
+          alignItems: "center",
+          justifyContent: "center",
           backgroundColor: COLOR_WHITE,
+          "&:hover": {
+            "& svg": {
+              transition: "all 0.4s",
+              transform: "scale(1.2)",
+            },
+          },
         },
       },
       "& .logo-content": {

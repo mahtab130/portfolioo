@@ -6,13 +6,9 @@ import {
   COLOR_SECEONDRY,
   COLOR_TEXT_GRAY,
 } from "../constants/colors";
-import {
-  FONT_BODY_SMALL,
-  FONT_WEIGHT_BLOD,
-  FONT_CAPTION_LARGE,
-} from "../constants/fonts";
 import { MAX_WIDTH } from "../constants/static";
-import { SPACE_H2, SPACE_D2, SPACE_S1, SPACE_XS1 } from "../constants/spaces";
+import { SPACE_H2, SPACE_S1, SPACE_XS1 } from "../constants/spaces";
+import { FONT_BODY_SMALL, FONT_CAPTION_LARGE } from "../constants/fonts";
 
 export const navbarSX: SxProps<Theme> = {
   mx: "auto",
@@ -35,7 +31,7 @@ export const navbarSX: SxProps<Theme> = {
     height: "45px",
   },
   "& .nav-list-wrapper": {
-    gap: SPACE_D2,
+    gap: "60px",
     display: "flex",
 
     "& .navbar-value-name": {
@@ -44,7 +40,7 @@ export const navbarSX: SxProps<Theme> = {
       position: "relative",
       color: COLOR_TEXT_GRAY,
       fontSize: FONT_BODY_SMALL,
-      fontWeight: FONT_WEIGHT_BLOD,
+      fontWeight: "600",
       "&.active": {
         color: COLOR_PRIMARY,
         "&:before": {

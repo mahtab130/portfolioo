@@ -1,37 +1,41 @@
 import { memo } from "react";
 
-import { Grid } from "@mui/material";
-import { awardSectionSX } from "../../helper/styleObjects/homeSection";
-import { CustomTitle } from "../common/CustomTitle";
-import { AwardBox } from "../common/AwardBox";
-import { diplomaIcon, medalStarIcon } from "../other/SvgComponent";
 import { map } from "lodash";
+import { Grid } from "@mui/material";
+
+import { AwardBox } from "../common/AwardBox";
+import { CustomTitle } from "../common/CustomTitle";
+import { AnimationSlideIn } from "../common/AnimateComponent";
+import { diplomaIcon, medalStarIcon } from "../other/SvgComponent";
+import { awardSectionSX } from "../../helper/styleObjects/homeSection";
 
 export const AwardsSection = memo(() => {
   return (
-    <Grid sx={awardSectionSX}>
-      <Grid className="container">
-        <Grid className="title-wrapper">
-          <CustomTitle
-            pretitle="جوایز"
-            title={[
-              { text: "دستاورد ها و جوایز", color: "blue" },
-              { text: "مــن", color: "black" },
-            ]}
-          />
-        </Grid>
-        <Grid className="box-container">
-          {map(data, ({ description, icon, title, iconColor }) => (
-            <AwardBox
-              iconColor={iconColor}
-              icon={icon}
-              title={title}
-              description={description}
+    <AnimationSlideIn direction={"right"}>
+      <Grid sx={awardSectionSX}>
+        <Grid className="container">
+          <Grid className="title-wrapper">
+            <CustomTitle
+              pretitle="جوایز"
+              title={[
+                { text: "دستاورد ها و جوایز", color: "blue" },
+                { text: "مــن", color: "black" },
+              ]}
             />
-          ))}
+          </Grid>
+          <Grid className="box-container">
+            {map(data, ({ description, icon, title, iconColor }) => (
+              <AwardBox
+                iconColor={iconColor}
+                icon={icon}
+                title={title}
+                description={description}
+              />
+            ))}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </AnimationSlideIn>
   );
 });
 

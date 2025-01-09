@@ -17,11 +17,10 @@ import {
 } from "../../helper/constants/fonts";
 import {
   COLOR_TEXT,
-  COLOR_LIGHT_GRAY,
   COLOR_MEDIUM_GRAY,
+  COLOR_PRIMARY,
 } from "../../helper/constants/colors";
-import { arrowRight2Icon } from "../other/SvgComponent";
-import { SPACE_S3, SPACE_XS1 } from "../../helper/constants/spaces";
+import { SPACE_XS1 } from "../../helper/constants/spaces";
 
 interface ILocalBreadcrumbs
   extends OverrideProps<BreadcrumbsTypeMap<object, "nav">, ElementType> {
@@ -50,7 +49,7 @@ export const CustomBreadcrumbs = memo<ILocalBreadcrumbs>(
             "& svg": { width: "16px", height: "16px" },
           }}
         >
-          {arrowRight2Icon(COLOR_LIGHT_GRAY)}
+          /
         </Box>
       ),
       []
@@ -91,10 +90,10 @@ const customBreadcrumbsSX: SxProps<Theme> = {
     },
   },
   "& .MuiBreadcrumbs-separator": {
-    marginX: SPACE_S3,
+    marginX: "16px",
   },
   "& li:last-child .breadcrumbs-item": {
     pointerEvents: "none",
-    color: COLOR_TEXT,
+    color: COLOR_PRIMARY,
   },
 };

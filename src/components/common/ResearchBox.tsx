@@ -1,12 +1,16 @@
-import { Box, Grid, Typography } from "@mui/material";
 import { memo } from "react";
-import { researchBoxSX } from "../../helper/styleObjects/common";
+
+import { useNavigate } from "react-router-dom";
+import { Box, Grid, Typography } from "@mui/material";
+
 import { CustomImage } from "../controller/CustomImage";
+import { researchBoxSX } from "../../helper/styleObjects/common";
 
 export const ResearchBox = memo<IResearchBox>(
-  ({ description, title, image }) => {
+  ({ description, title, image, url }) => {
+    const navigate = useNavigate();
     return (
-      <Grid sx={researchBoxSX}>
+      <Grid sx={researchBoxSX} onClick={() => navigate(url || "")}>
         <Typography className="title">{title}</Typography>
         <Grid className="description">{description}</Grid>
         <Box className="divider"></Box>

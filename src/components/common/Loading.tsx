@@ -2,6 +2,7 @@ import { Grid, SxProps, Theme } from "@mui/material";
 import { CustomImage } from "../controller/CustomImage";
 
 import loading from "../../assets/images/loading.gif";
+import { COLOR_PRIMARY } from "../../helper/constants/colors";
 
 export const Loading = () => {
   return (
@@ -17,4 +18,5 @@ const laodingSX: SxProps<Theme> = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  backgroundColor: COLOR_PRIMARY,
 };

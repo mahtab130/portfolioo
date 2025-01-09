@@ -36,6 +36,7 @@ interface IEducationBox {
   }[];
 }
 interface IResearchBox {
+  id: number;
   url: string;
   title: string;
   image: string;

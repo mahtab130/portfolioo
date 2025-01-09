@@ -10,16 +10,13 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import {
-  // arrowLeft2Icon,
-  // customerIcon,
+  lineIcon,
+  qouteIcon,
   arrowLeftIcon,
   arrowRight2Icon,
   arrowRightIcon,
-  lineIcon,
-  qouteIcon,
 } from "../other/SvgComponent";
 import {
-  SPACE_H2,
   SPACE_D1,
   SPACE_M2,
   SPACE_XM1,
@@ -34,8 +31,6 @@ import { BlogCard } from "../common/BlogCard";
 import { ContentSection } from "../common/ContentSection";
 import { CustomRating } from "../controller/CustomRating";
 import { COLOR_PRIMARY, COLOR_WHITE } from "../../helper/constants/colors";
-
-// import vectorYellow from "../../assets/images/vectors/vector-flower-orange.webp";
 
 export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
   const imageComponent = useCallback(
@@ -136,7 +131,6 @@ export const CustomSwiperBlog = memo<{ data: IBlogCard[] }>(({ data }) => {
 });
 
 const SwiperSectionSx: SxProps<Theme> = {
-  my: SPACE_H2,
   width: "100%",
   height: "auto",
   "& .swiper": {
@@ -184,6 +178,7 @@ const SwiperSectionSx: SxProps<Theme> = {
           display: "flex",
           gap: SPACE_XS1,
           mt: "18px",
+          mr: "2px",
           "& .swiper-prev, .swiper-next": {
             p: "10px",
             height: "18px",
@@ -191,16 +186,20 @@ const SwiperSectionSx: SxProps<Theme> = {
             borderRadius: "50%",
             transition: "all 0.4s",
             backgroundColor: COLOR_PRIMARY,
+            "& svg path": {
+              fill: COLOR_WHITE,
+            },
             "&:hover": {
               transform: "scale(1.1)",
             },
             "&.disabled-button": {
-              opacity: "0.3",
               cursor: "default",
-              filter: "brightness(0)",
               backgroundColor: "#E9E9E9",
-              "& svg": {
+              "& svg path": {
                 fill: "#818181",
+              },
+              "&:hover": {
+                transform: "scale(1)",
               },
             },
           },
