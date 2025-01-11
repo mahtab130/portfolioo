@@ -99,6 +99,9 @@ export const footerSX: SxProps<Theme> = {
           "& .MuiInputBase-input": {
             color: COLOR_WHITE,
             fontWeight: "400",
+            "&::placeholder": {
+              color: "#E1E1E1",
+            },
           },
         },
         "& .end-icon": {

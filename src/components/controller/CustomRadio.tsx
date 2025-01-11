@@ -9,11 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 
-import {
-  FONT_LABEL_LARGE,
-  FONT_WEIGHT_BLOD,
-} from "../../helper/constants/fonts";
-import { SPACE_S1, SPACE_S2 } from "../../helper/constants/spaces";
+import { SPACE_S2 } from "../../helper/constants/spaces";
+import { FONT_LABEL_LARGE } from "../../helper/constants/fonts";
 
 interface ICustomRadio extends RadioProps {
   label: string;
@@ -32,13 +29,12 @@ export const CustomRadio = memo<ICustomRadio>(({ label, ...props }) => {
 
 const radioSX: SxProps<Theme> = {
   width: "100%",
-  gap: SPACE_S1,
   display: "flex",
   alignItems: "center",
   "& .label": {
-    color: "#939393",
+    color: "#747474",
     fontSize: FONT_LABEL_LARGE,
-    fontWeight: FONT_WEIGHT_BLOD,
+    fontWeight: "600",
   },
   "& .MuiRadio-root": {
     p: SPACE_S2,

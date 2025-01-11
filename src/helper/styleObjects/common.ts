@@ -4,9 +4,7 @@ import {
   SPACE_H2,
   SPACE_D1,
   SPACE_M2,
-  SPACE_M3,
   SPACE_XS1,
-  SPACE_S2,
   SPACE_M4,
 } from "../constants/spaces";
 import {
@@ -14,8 +12,6 @@ import {
   COLOR_GRAY,
   COLOR_WHITE,
   COLOR_PRIMARY,
-  COLOR_SECEONDRY,
-  COLOR_BACKGROUND,
   COLOR_TEXT_WHITE,
 } from "../constants/colors";
 import {
@@ -23,159 +19,10 @@ import {
   FONT_WEIGHT_BLOD,
   FONT_BODY_MEDIUM2,
   FONT_BODY_MEDIUM1,
-  FONT_CAPTION_LARGE,
   FONT_BODY_SMALL,
   FONT_TITLE_MEDIUM,
 } from "../constants/fonts";
 import { MAX_WIDTH } from "../constants/static";
-
-export const categoryCardSX: SxProps<Theme> = {
-  px: SPACE_D1,
-  width: "100%",
-  display: "flex",
-  cursor: "pointer",
-  maxHeight: "175px",
-  overflow: "hidden",
-  borderRadius: "16px",
-  position: "relative",
-  transition: "all 0.6s",
-  justifyContent: "space-between",
-  background:
-    "linear-gradient(296.92deg, #568A9E 15.8%, #6A99AB 23.43%, #76A3B4 28.59%, #6D9FB1 35.91%, #6A9BAE 44.85%, #568A9E 59.37%, #568A9E 67.78%, #568A9E 75.24%, #568A9E 83.27%)",
-  "&:hover": {
-    transform: "translateY(-10px)",
-  },
-  "& .title-wrapper": {
-    py: SPACE_D1,
-    display: "flex",
-    gap: SPACE_XS1,
-    flexDirection: "column",
-    "& .title": {
-      fontSize: FONT_BODY_MEDIUM1,
-      fontWeight: FONT_WEIGHT_BLOD,
-      color: COLOR_WHITE,
-    },
-    "& .vector": {
-      left: "-15px",
-      width: "110px",
-      height: "110px",
-      bottom: "-15px",
-      position: "absolute",
-    },
-  },
-  "& .image": {
-    height: "175px",
-  },
-};
-
-export const productCardSX = (
-  variant: IProductCard["variant"]
-): SxProps<Theme> => ({
-  width: "100%",
-  height: "auto",
-  overflow: "hidden",
-  cursor: "pointer",
-  borderRadius: "14px",
-  boxShadow: variant == "cart" ? "none" : "0px 1px 2px 0px #1018280D  ",
-  "&:hover": {
-    "& .texts-wrapper": {
-      "& .price-wrapper": {
-        "& .add-to-cart": {
-          "&:before": {
-            width: "100%",
-            height: "40px",
-            borderRadius: "50px",
-          },
-        },
-      },
-    },
-    "& .image-wrapper": {
-      "& .image-product": {
-        transform: "scale(1.13)",
-      },
-    },
-  },
-  "& .image-wrapper": {
-    width: "100%",
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "center",
-    height:
-      variant == "sale"
-        ? "350px"
-        : variant == "search" || variant == "cart"
-        ? "320px"
-        : " 370px",
-    borderRadius:
-      variant == "sale" || variant == "search" || variant == "cart"
-        ? "14px"
-        : "0px",
-    background:
-      variant == "category"
-        ? "linear-gradient(154.68deg, #E7EDEF 24.32%, #E7EDEF 99.84%)"
-        : " linear-gradient(154.68deg, #E7EDEF 24.32%, #FFFFFF 45.27%, #FFFFFF 56.96%, #E7EDEF 99.84%)",
-    "& .image-product": {
-      height: "300px",
-      transition: "all .4s ease",
-    },
-  },
-  "& .texts-wrapper": {
-    p: SPACE_M3,
-    width: "100%",
-    display: "flex",
-    textAlign: variant == "search" || variant == "cart" ? "center" : "unset",
-    rowGap: variant == "sale" ? SPACE_S2 : SPACE_M3,
-    flexDirection: "column",
-    backgroundColor:
-      variant == "sale" || variant == "search"
-        ? COLOR_SECEONDRY
-        : COLOR_BACKGROUND,
-    "& .title": {
-      color:
-        variant == "sale" || variant == "search" ? COLOR_WHITE : COLOR_TEXT,
-      fontWeight: FONT_WEIGHT_BLOD,
-      fontSize: FONT_BODY_MEDIUM2,
-    },
-    "& .price-wrapper": {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      "& .add-to-cart": {
-        pr: SPACE_M3,
-        gap: SPACE_S2,
-        display: "flex",
-        fontWeight: FONT_WEIGHT_BLOD,
-        cursor: "pointer",
-        position: "relative",
-        alignItems: "center",
-        fontSize: FONT_CAPTION_LARGE,
-        zIndex: "2",
-        "& svg": {
-          width: "12px",
-          height: "12px",
-        },
-        "&:before": {
-          top: "-11px",
-          left: "-8px",
-          zIndex: "-2",
-          width: "40px",
-          content: "''",
-          height: "40px",
-          display: "block",
-          borderRadius: "50%",
-          position: "absolute",
-          transition: "all .4s ease",
-          backgroundColor: COLOR_PRIMARY,
-        },
-      },
-      "& .price": {
-        color: variant == "sale" ? COLOR_WHITE : COLOR_TEXT,
-        fontWeight: FONT_WEIGHT_BLOD,
-        fontSize: FONT_LABEL_LARGE,
-      },
-    },
-  },
-});
 
 export const blogCardSX: SxProps<Theme> = {
   width: "100%",
@@ -602,5 +449,89 @@ export const dialogContentSX: SxProps<Theme> = {
     textAlign: "center",
     fontSize: FONT_BODY_SMALL,
     fontWeight: FONT_WEIGHT_BLOD,
+  },
+};
+
+export const commentFieldSX: SxProps<Theme> = {
+  mt: "20px",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  "& .title-comment": {
+    mb: "30px",
+    display: "flex",
+    color: "#161616",
+    fontSize: "18px",
+    fontWeight: "700",
+    gap: "4px",
+    "& .vector": {
+      width: "34px",
+      height: "28px",
+      mt: "14px",
+    },
+  },
+  "& .field-wrapper": {
+    mt: "24px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  "& .button-wrapper": {
+    mt: "46px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+};
+
+export const contactDialog: SxProps<Theme> = {
+  mt: "18px",
+  gap: "24px",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  "& .contact-info": {
+    display: "flex",
+    justifyContent: "space-between",
+    pb: "22px",
+    mb: "28px",
+    borderBottom: "1px dashed" + COLOR_PRIMARY,
+    "& p": {
+      fontSize: "16px",
+      fontWeight: "400",
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
+    },
+  },
+};
+
+export const consultaionDialog: SxProps<Theme> = {
+  gap: "24px",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  "& textarea": {
+    height: "150px !important",
+    minHeight: "150px",
+  },
+  "& .radio-wrapper": {
+    display: "flex",
+    flexDirection: "column",
+    pb: "22px",
+    mb: "28px",
+    borderBottom: "1px dashed" + COLOR_PRIMARY,
+    "& .label-radio": {
+      fontSize: "18px",
+      fontWeight: "700",
+      mb: "8px",
+    },
+    "& .radios": {
+      fontSize: "16px",
+      fontWeight: "400",
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
+    },
   },
 };

@@ -24,8 +24,9 @@ export const AwardsSection = memo(() => {
             />
           </Grid>
           <Grid className="box-container">
-            {map(data, ({ description, icon, title, iconColor }) => (
+            {map(data, ({ description, icon, title, iconColor }, index) => (
               <AwardBox
+                key={index}
                 iconColor={iconColor}
                 icon={icon}
                 title={title}

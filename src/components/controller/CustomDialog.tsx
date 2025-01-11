@@ -7,12 +7,14 @@ import {
   DialogProps,
   DialogContent,
   DialogActions,
+  DialogTitle,
+  Box,
 } from "@mui/material";
 
 import { CustomButton, TCustomButton } from "./CustomButton";
-import { FONT_BODY_SMALL } from "../../helper/constants/fonts";
 import { COLOR_TEXT, COLOR_WHITE } from "../../helper/constants/colors";
-import { SPACE_H2, SPACE_M4, SPACE_XM1 } from "../../helper/constants/spaces";
+import { SPACE_M4 } from "../../helper/constants/spaces";
+import { closeIcon } from "../other/SvgComponent";
 
 interface IButton
   extends Pick<TCustomButton, "variant" | "customColor" | "onClick"> {
@@ -20,25 +22,28 @@ interface IButton
 }
 
 interface ICustomDialog extends DialogProps {
+  title: string;
   dialogAction: {
-    cancelButton?: IButton;
     submitButton?: IButton;
   };
   dialogContent: JSX.Element;
+  onclose: () => void;
 }
 
 export const CustomDialog = memo<ICustomDialog>(
-  ({ dialogAction, dialogContent, open }) => {
-    const { cancelButton, submitButton } = dialogAction;
+  ({ dialogAction, dialogContent, open, title, onclose }) => {
+    const { submitButton } = dialogAction;
     return (
       <Dialog sx={dialogSX} open={open}>
+        <DialogTitle>
+          {title}
+          <Box component="span" onClick={onclose}>
+            {closeIcon()}
+          </Box>
+        </DialogTitle>
         <DialogContent>{dialogContent}</DialogContent>
         {dialogAction && (
           <DialogActions>
-            <CustomButton
-              text={cancelButton?.text || "Cancel"}
-              {...cancelButton}
-            />
             <CustomButton
               text={submitButton?.text || "Submit"}
               {...submitButton}
@@ -52,13 +57,13 @@ export const CustomDialog = memo<ICustomDialog>(
 
 const dialogSX: SxProps<Theme> = {
   width: "100%",
+  zIndex: 22222,
   "& .MuiPaper-root": {
-    width: "400px",
+    width: "640px",
     minHeight: "240px",
     borderRadius: "14px",
     backgroundColor: COLOR_WHITE,
-    px: SPACE_H2,
-    py: SPACE_XM1,
+    p: "28px",
     "& .MuiDialogContent-root": {
       p: "0px",
       width: "100%",
@@ -69,13 +74,33 @@ const dialogSX: SxProps<Theme> = {
     },
     "& .MuiDialogActions-root": {
       display: "flex",
+      px: "80px",
       justifyContent: "space-between",
+      py: "0",
       "& button": {
-        fontSize: FONT_BODY_SMALL,
+        width: "100%",
         px: SPACE_M4,
-        borderRadius: "10px",
+        fontSize: "16px",
+        fontWeight: "600",
+        borderRadius: "24px",
         "&.MuiButton-outlined": {
           color: COLOR_TEXT,
+        },
+      },
+    },
+    "& .MuiDialogTitle-root ": {
+      p: "0px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: COLOR_TEXT,
+      fontWeight: "700",
+      fontSize: "24px",
+      "& span": {
+        cursor: "pointer",
+        transition: "0.3s",
+        "&:hover": {
+          scale: "1.2",
         },
       },
     },

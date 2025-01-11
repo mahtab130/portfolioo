@@ -1,17 +1,23 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 
 import { Box, Grid, Typography } from "@mui/material";
 
 import { CustomTitle } from "../common/CustomTitle";
 import { CustomImage } from "../controller/CustomImage";
-import { CustomButton } from "../controller/CustomButton";
+import { CustomButtonV2 } from "../controller/CustomButton";
 import { AnimationSlideIn } from "../common/AnimateComponent";
 import { homeSectionSX } from "../../helper/styleObjects/homeSection";
+
+import { CustomRadio } from "../controller/CustomRadio";
+import { CustomDialog } from "../controller/CustomDialog";
+import { consultaionDialog } from "../../helper/styleObjects/common";
+import { CustomTextarea, CustomTextfield } from "../controller/CustomTextfield";
 
 import ImageOfMe from "../../assets/images/home/home-man.webp";
 import vector from "../../assets/images/vectors/arrow-home.webp";
 
 export const HomeSection = memo(() => {
+  const [openconsultation, setopenconsultation] = useState(false);
   return (
     <Grid sx={homeSectionSX} className="home-wrapper">
       <AnimationSlideIn direction="right">
@@ -32,7 +38,11 @@ export const HomeSection = memo(() => {
             </Typography>
             <Grid className="button-wrapper">
               <Grid>
-                <CustomButton text="دریافت مشاوره" variant="contained" />
+                <CustomButtonV2
+                  text="دریافت مشاوره"
+                  variant="contained"
+                  onClick={() => setopenconsultation(true)}
+                />
               </Grid>
               <CustomImage className="vector" src={vector} />
             </Grid>
@@ -44,6 +54,45 @@ export const HomeSection = memo(() => {
           </Grid>
         </Grid>
       </AnimationSlideIn>
+
+      <CustomDialog
+        onclose={() => setopenconsultation(false)}
+        title="دریافت مشاوره رایگان"
+        open={openconsultation}
+        dialogContent={<ConsultaionDialog />}
+        dialogAction={{
+          submitButton: {
+            text: "ارســـــال",
+            variant: "contained",
+            onClick: () => setopenconsultation(false),
+          },
+        }}
+      />
+    </Grid>
+  );
+});
+
+const ConsultaionDialog = memo(() => {
+  return (
+    <Grid sx={consultaionDialog}>
+      <Typography className="text">
+        لورم ایپسوم مــــتن ساختگــی با تولید سادگی نامـــفهوم از صنـــعت چاپ، و
+        با همراه اسـتفاده از طراحان گرافیــــــک اســـت، چاپگرها و متون بلکه
+        روزنامه است.
+      </Typography>
+      <CustomTextfield placeholder="نام و نام خانوادگی" />
+      <CustomTextfield placeholder="ایمیل" />
+      <CustomTextarea placeholder="پیام خود را اینجا بنویسید" />
+      <Grid className="radio-wrapper">
+        <Typography className="label-radio">
+          در چه زمانی با شما تماس بگیریم؟
+        </Typography>
+        <Grid className="radios">
+          <CustomRadio label={"اسرع وقت"} />
+          <CustomRadio label={"۹ الی ۱۲"} />
+          <CustomRadio label={"۱۴ الی ۲۰"} />
+        </Grid>
+      </Grid>
     </Grid>
   );
 });

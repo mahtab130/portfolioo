@@ -7,10 +7,10 @@ import { CustomImage } from "../controller/CustomImage";
 import { researchBoxSX } from "../../helper/styleObjects/common";
 
 export const ResearchBox = memo<IResearchBox>(
-  ({ description, title, image, url }) => {
+  ({ description, title, image, navigateString }) => {
     const navigate = useNavigate();
     return (
-      <Grid sx={researchBoxSX} onClick={() => navigate(url || "")}>
+      <Grid sx={researchBoxSX} onClick={() => navigate(navigateString || "")}>
         <Typography className="title">{title}</Typography>
         <Grid className="description">{description}</Grid>
         <Box className="divider"></Box>

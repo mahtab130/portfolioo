@@ -1,7 +1,9 @@
-import { Grid, Typography } from "@mui/material";
 import { memo } from "react";
-import { educationBoxSX } from "../../helper/styleObjects/common";
+
 import { map } from "lodash";
+import { Grid, Typography } from "@mui/material";
+
+import { educationBoxSX } from "../../helper/styleObjects/common";
 
 export const EducationBox = memo<IEducationBox>(({ description, title }) => {
   return (
@@ -16,7 +18,7 @@ export const EducationBox = memo<IEducationBox>(({ description, title }) => {
             </Grid>
             <Grid className="years-wrapper">
               {map(years, (item, index) => (
-                <Typography className="year">
+                <Typography key={index + item} className="year">
                   {item} {index < years.length - 1 && " - "}
                 </Typography>
               ))}

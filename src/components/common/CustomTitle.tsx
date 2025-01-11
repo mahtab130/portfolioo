@@ -1,10 +1,10 @@
 import { memo } from "react";
 
+import { map } from "lodash";
 import { Typography, Grid, Box } from "@mui/material";
 
 import { straightLineIcon } from "../other/SvgComponent";
 import { customTitle } from "../../helper/styleObjects/common";
-import { map } from "lodash";
 import { COLOR_PRIMARY, COLOR_TEXT } from "../../helper/constants/colors";
 
 export const CustomTitle = memo<ICustomTitle>(
@@ -17,8 +17,9 @@ export const CustomTitle = memo<ICustomTitle>(
           {pretitle}
         </Typography>
         <Typography className="title">
-          {map(title, ({ text, color }) => (
+          {map(title, ({ text, color }, index) => (
             <Box
+              key={index}
               component="span"
               sx={{ color: color == "blue" ? COLOR_PRIMARY : COLOR_TEXT }}
             >

@@ -1,5 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
 import { memo } from "react";
+
+import { Box, Grid, Typography } from "@mui/material";
+
 import { awardBoxSX } from "../../helper/styleObjects/common";
 
 export const AwardBox = memo<IAwardBox>(

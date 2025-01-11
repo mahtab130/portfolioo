@@ -30,40 +30,60 @@ export const contentBlogSX: SxProps<Theme> = {
     mt: SPACE_M4,
     display: "flex",
     flexDirection: "column",
-    "& .text": {
-      color: "#6A6A6A",
-      lineHeight: "22px",
-      fontSize: FONT_BODY_MEDIUM2,
-      fontWeight: FONT_WEIGHT_BLOD,
-      "&.black": {
-        color: COLOR_TEXT,
-      },
-      "& span": {
-        width: "6px",
-        height: "6px",
-        backgroundColor: COLOR_SECEONDRY,
-        borderRadius: "50%",
-      },
-    },
   },
-  "& .image1-wrapper": {
-    width: "100%",
-    display: "flex",
-    mt: SPACE_M1,
-    justifyContent: "center",
-    "& .image": {
-      width: "700px",
+  "& .text, p": {
+    color: "#2B2B2B",
+    lineHeight: "33px",
+    fontSize: "16px",
+    fontWeight: "600",
+    "&.black": {
+      color: COLOR_TEXT,
+      fontWeight: "700",
+      fontSize: "20px",
+    },
+    "& span": {
+      width: "6px",
+      height: "6px",
+      backgroundColor: COLOR_SECEONDRY,
+      borderRadius: "50%",
     },
   },
   "& .image2-wrapper": {
     width: "100%",
     display: "flex",
-    mt: SPACE_M1,
     justifyContent: "space-between",
     "& .image": {
       width: "100%",
-      height: "480px",
     },
+  },
+  "& .image-wrapper": {
+    px: "120px",
+    width: "100%",
+    "& .image": {
+      width: "100%",
+      height: "215px",
+      objectFit: "cover",
+    },
+  },
+  "& .image-research-wrapper": {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "start",
+    "& img": {
+      width: "100%",
+      borderRadius: "8px",
+      height: "214px",
+      mt: "8px",
+    },
+  },
+  "& .conclusion": {
+    mt: "16px",
+    lineHeight: "27px",
+    fontWeight: "600",
+    fontSize: "16px",
+    color: "#2B2B2B",
   },
 };
 
@@ -89,7 +109,8 @@ export const blogDetailSX: SxProps<Theme> = {
       mt: "28px",
       width: "100%",
       height: "293px",
-      borderRadius: "8px !important",
+      borderRadius: "8px",
+      objectFit: "cover",
     },
     "& .title": {
       color: COLOR_TEXT,

@@ -37,10 +37,10 @@ interface IEducationBox {
 }
 interface IResearchBox {
   id: number;
-  url: string;
   title: string;
   image: string;
   description: string;
+  navigateString?: string;
 }
 interface IAwardBox {
   icon: TAny;
@@ -56,13 +56,6 @@ interface IEmptyLastCenterJustify {
   length: number;
 }
 
-interface INoOptionsComponent {
-  text?: string;
-  imageSrc?: string;
-  searchKey?: string;
-  imageSize?: TStandardSize;
-}
-
 interface IContentSection<TSx = TAny> {
   image: string | JSX.Element;
   content: JSX.Element;
@@ -74,39 +67,12 @@ interface IContentSection<TSx = TAny> {
   };
 }
 
-interface IProductCard {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  rate?: number;
-  variant?: "sale" | "product" | "search" | "cart" | "category";
-}
-
-interface ICategoryCard {
-  id: number;
-  name: string;
-  image: string;
-  thumbnail?: string;
-  onClick?: () => void;
-  description?: string;
-}
 interface IBlogCard {
   id: number;
   image: string;
   title: string;
   description: string;
   navigateString?: string;
-  writer?: string;
-  date?: string;
-  studyTime?: string;
-  content?: JSX.Element;
 }
 
-interface IFaqCard {
-  id: number;
-  title: string;
-  description: string;
-  expandedId?: number;
-  handleExpansion?: (id: number) => void;
-}
+interface ICommentField {}

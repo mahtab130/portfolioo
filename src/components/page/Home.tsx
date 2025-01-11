@@ -6,8 +6,8 @@ import { AboutMe } from "../sections/AboutMe";
 import { HomeSection } from "../sections/HomeSection";
 import { BlogSection } from "../sections/BlogSection";
 import { homeSX } from "../../helper/styleObjects/main";
-import { ServicesSection } from "../sections/ServicesSection";
 import { AwardsSection } from "../sections/AwardsSection";
+import { ServicesSection } from "../sections/ServicesSection";
 import { CommentsSection } from "../sections/CommentsSection";
 import { ResearchesSection } from "../sections/ResearchesSection";
 

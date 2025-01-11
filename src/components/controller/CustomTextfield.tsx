@@ -1,4 +1,10 @@
-import { memo, useRef, useState } from "react";
+import {
+  DetailedHTMLProps,
+  memo,
+  TextareaHTMLAttributes,
+  useRef,
+  useState,
+} from "react";
 
 import {
   Grid,
@@ -9,18 +15,9 @@ import {
   TextFieldVariants,
 } from "@mui/material";
 
-import {
-  COLOR_TEXT,
-  COLOR_PRIMARY,
-  COLOR_TEXT_WHITE,
-  COLOR_PLACEHOLDER,
-} from "../../helper/constants/colors";
-import {
-  FONT_LABEL_SMALL,
-  FONT_WEIGHT_BLOD,
-} from "../../helper/constants/fonts";
 import { CustomLabel } from "./CustomLabel";
 import { SPACE_S4 } from "../../helper/constants/spaces";
+import { COLOR_TEXT, COLOR_PRIMARY } from "../../helper/constants/colors";
 
 export type TCustomTextfield =
   | {
@@ -40,6 +37,13 @@ export type TCustomTextfield =
         endIcon?: JSX.Element;
         startIcon?: JSX.Element;
       };
+
+export type TCustomTextarea = DetailedHTMLProps<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> & {
+  customLabel?: string;
+};
 
 export const CustomTextfield = memo<TCustomTextfield>(
   ({
@@ -106,19 +110,17 @@ const textfieldSX = (
       height: "50px",
       overflow: "hidden",
       pl: hasIcon ? "0px" : undefined,
-      borderRadius: "12px",
+      borderRadius: "8px",
       "& fieldset": {
-        border: noBorder
-          ? "none"
-          : "1px solid" + COLOR_TEXT_WHITE || customColor,
+        border: noBorder ? "none" : "1px solid " + "#C4C4C4" || customColor,
       },
       "& .MuiInputBase-input": {
-        fontSize: FONT_LABEL_SMALL,
-        fontWeight: FONT_WEIGHT_BLOD,
+        fontSize: "16px",
+        fontWeight: "600",
         color: customColor || COLOR_TEXT,
         "&::placeholder": {
           opacity: "1",
-          color: COLOR_PLACEHOLDER,
+          color: "#747474",
         },
       },
       "&.MuiInput-underline ": {
@@ -152,3 +154,37 @@ const textfieldSX = (
     },
   },
 });
+
+export const CustomTextarea = memo<TCustomTextarea>(
+  ({ customLabel, ...props }) => {
+    return (
+      <Grid className="textfield-wrapper" sx={textareaSX}>
+        {customLabel && <CustomLabel size="small" label={customLabel || ""} />}
+        <textarea {...props} />
+      </Grid>
+    );
+  }
+);
+
+const textareaSX: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "column",
+  "& textarea": {
+    p: "14px",
+    fontSize: "16px",
+    fontWeight: "600",
+    color: COLOR_TEXT,
+    minHeight: "190px",
+    height: "190px !important",
+    borderRadius: "8px",
+    fontFamily: "Yekan Bakh",
+    border: "1px solid #C4C4C4",
+    "&:focus-visible": {
+      outline: "1px solid #C4C4C4",
+    },
+    "&::placeholder": {
+      opacity: "1",
+      color: "#747474",
+    },
+  },
+};

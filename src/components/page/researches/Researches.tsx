@@ -3,14 +3,13 @@ import { FC } from "react";
 import { map } from "lodash";
 import { Grid } from "@mui/material";
 
+import { researches } from "../../../data/researches";
 import { HeadingPage } from "../../common/HeadingPage";
-
+import { ResearchBox } from "../../common/ResearchBox";
 import { blogSX } from "../../../helper/styleObjects/blog";
 import { AnimationSlideIn } from "../../common/AnimateComponent";
 
 import backgrounImage from "../../../assets/images/researches/research.webp";
-import { ResearchBox } from "../../common/ResearchBox";
-import { blogs } from "../../../data/blogs";
 
 const Researches: FC = () => {
   return (
@@ -24,15 +23,15 @@ const Researches: FC = () => {
       />
 
       <Grid container className="container-body">
-        {map(blogs, ({ description, id, image, title }, index) => (
+        {map(researches, ({ description, id, image, title }, index) => (
           <Grid item xs={12} md={3.8} key={index + id}>
             <AnimationSlideIn direction="left" className="animaiton">
               <ResearchBox
                 id={id}
-                url={`${id}`}
                 title={title}
                 image={image}
                 description={description}
+                navigateString={`${id}`}
               />
             </AnimationSlideIn>
           </Grid>

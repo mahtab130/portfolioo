@@ -2,6 +2,8 @@ import { DOMAttributes, memo } from "react";
 
 import { merge } from "lodash";
 import {
+  Box,
+  Grid,
   Theme,
   Button,
   SxProps,
@@ -19,6 +21,7 @@ import {
   FONT_WEIGHT_BLOD,
   FONT_LABEL_MEDIUM,
 } from "../../helper/constants/fonts";
+import { arrowLeftCrookedIcon } from "../other/SvgComponent";
 import { SPACE_D1, SPACE_XS1, SPACE_M2 } from "../../helper/constants/spaces";
 
 export type TCustomButton = ButtonTypeMap<
@@ -81,5 +84,47 @@ const buttonSX = (customColor?: string): SxProps<Theme> => ({
 });
 
 export const CustomButtonV2 = memo<TCustomButton>(({ text, ...props }) => {
-  return <CustomButton text={text} {...props} />;
+  return (
+    <Grid sx={customButtonV2SX}>
+      <Grid className="arrow">
+        <Box component="span">{arrowLeftCrookedIcon()}</Box>
+      </Grid>
+      <CustomButton text={text} {...props} />
+    </Grid>
+  );
 });
+
+const customButtonV2SX: SxProps<Theme> = {
+  height: "40px",
+  display: "flex",
+  width: "fit-content",
+  alignItems: "center",
+  position: "relative",
+  "& .arrow": {
+    p: "6px",
+    width: "120px",
+    height: "100%",
+    borderRadius: "24px",
+    position: "absolute",
+    backgroundColor: "#3D3F3C",
+    "& span": {
+      width: "28px",
+      height: "28px",
+      display: "flex",
+      borderRadius: "50%",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: COLOR_WHITE,
+    },
+  },
+  "& .MuiButton-contained": {
+    mr: "40px",
+    px: "15px",
+    height: "100%",
+    "&:hover": {
+      outline: "none",
+      color: COLOR_WHITE,
+      backgroundColor: COLOR_PRIMARY,
+    },
+  },
+};

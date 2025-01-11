@@ -1,6 +1,7 @@
 import { memo } from "react";
 
 import { Grid } from "@mui/material";
+
 import { CustomTitle } from "../common/CustomTitle";
 import { EducationBox } from "../common/EducationBox";
 import { CustomImage } from "../controller/CustomImage";
@@ -28,7 +29,7 @@ export const AboutMe = memo(() => {
               <CustomImage src={vector2} />
             </Grid>
           </Grid>
-          <Grid container md={12} className="box-container">
+          <Grid container item md={12} className="box-container">
             <Grid item md={5.5}>
               <EducationBox
                 title={"تحصیــلات"}

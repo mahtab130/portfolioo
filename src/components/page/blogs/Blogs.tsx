@@ -3,10 +3,9 @@ import { FC } from "react";
 import { map } from "lodash";
 import { Grid } from "@mui/material";
 
-import { HeadingPage } from "../../common/HeadingPage";
-
 import { blogs } from "../../../data/blogs";
 import { BlogCard } from "../../common/BlogCard";
+import { HeadingPage } from "../../common/HeadingPage";
 import { blogSX } from "../../../helper/styleObjects/blog";
 import { AnimationSlideIn } from "../../common/AnimateComponent";
 

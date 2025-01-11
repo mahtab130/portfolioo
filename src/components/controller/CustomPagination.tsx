@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   // Box,
   Pagination,
@@ -6,7 +7,6 @@ import {
   SxProps,
   Theme,
 } from "@mui/material";
-import { memo } from "react";
 import { COLOR_SECEONDRY, COLOR_WHITE } from "../../helper/constants/colors";
 import {
   FONT_TITLE_SMALL,

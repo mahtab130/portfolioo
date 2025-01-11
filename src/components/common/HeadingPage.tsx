@@ -3,8 +3,8 @@ import { memo } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 import { AnimationSlideIn } from "./AnimateComponent";
-import { headingPageSX } from "../../helper/styleObjects/common";
 import { CustomImage } from "../controller/CustomImage";
+import { headingPageSX } from "../../helper/styleObjects/common";
 
 import vector from "../../assets/images/vectors/orange-arrow.webp";
 

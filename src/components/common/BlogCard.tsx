@@ -1,11 +1,11 @@
 import { memo } from "react";
 
+import { useNavigate } from "react-router-dom";
 import { Box, Grid, Typography } from "@mui/material";
 
 import { arrowLeft2Icon } from "../other/SvgComponent";
 import { CustomButton } from "../controller/CustomButton";
 import { blogCardSX } from "../../helper/styleObjects/common";
-import { useNavigate } from "react-router-dom";
 
 export const BlogCard = memo<IBlogCard>(
   ({ image, description, title, navigateString }) => {

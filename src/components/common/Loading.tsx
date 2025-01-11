@@ -1,8 +1,9 @@
 import { Grid, SxProps, Theme } from "@mui/material";
+
 import { CustomImage } from "../controller/CustomImage";
+import { COLOR_PRIMARY } from "../../helper/constants/colors";
 
 import loading from "../../assets/images/loading.gif";
-import { COLOR_PRIMARY } from "../../helper/constants/colors";
 
 export const Loading = () => {
   return (

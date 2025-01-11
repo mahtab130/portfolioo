@@ -31,6 +31,10 @@ import { BlogCard } from "../common/BlogCard";
 import { ContentSection } from "../common/ContentSection";
 import { CustomRating } from "../controller/CustomRating";
 import { COLOR_PRIMARY, COLOR_WHITE } from "../../helper/constants/colors";
+import { CustomImage } from "./CustomImage";
+
+import vector1 from "../../assets/images/vectors/vector-blue.webp";
+import vector2 from "../../assets/images/vectors/vector-orange.webp";
 
 export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
   const imageComponent = useCallback(
@@ -56,12 +60,18 @@ export const CustomSwiperComment = memo<ICustomSwiperComment>(({ data }) => {
             <ContentSection
               image={imageComponent(image)}
               content={
-                <ContentComment
-                  name={name}
-                  rate={rate}
-                  comment={comment}
-                  classNames={{ next: "swiper-next", prev: "swiper-prev" }}
-                />
+                <>
+                  <ContentComment
+                    name={name}
+                    rate={rate}
+                    comment={comment}
+                    classNames={{ next: "swiper-next", prev: "swiper-prev" }}
+                  />
+                  <Grid className="vectors-wrapper">
+                    <CustomImage src={vector1} />
+                    <CustomImage src={vector2} />
+                  </Grid>
+                </>
               }
             />
           </SwiperSlide>
@@ -201,6 +211,22 @@ const SwiperSectionSx: SxProps<Theme> = {
               "&:hover": {
                 transform: "scale(1)",
               },
+            },
+          },
+        },
+        "& .vectors-wrapper": {
+          position: "absolute",
+          left: "-250px",
+          bottom: 0,
+          width: "115px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          "& img": {
+            width: "60px",
+            height: "60px",
+            "&:last-child": {
+              mr: "60px",
             },
           },
         },
