@@ -13,7 +13,7 @@ import { CustomDialog } from "../controller/CustomDialog";
 import { consultaionDialog } from "../../helper/styleObjects/common";
 import { CustomTextarea, CustomTextfield } from "../controller/CustomTextfield";
 
-import ImageOfMe from "../../assets/images/home/home-man.webp";
+import ImageOfMe from "../../assets/images/home/home-man.png";
 import vector from "../../assets/images/vectors/arrow-home.webp";
 
 export const HomeSection = memo(() => {
@@ -27,7 +27,7 @@ export const HomeSection = memo(() => {
               pretitle="ســـلام"
               title={[
                 { color: "black", text: "مــن" },
-                { color: "blue", text: "محمد معطر" },
+                { color: "blue", text: "جادی میرمیرانی" },
                 { color: "black", text: "هستم" },
               ]}
             />

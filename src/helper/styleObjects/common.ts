@@ -323,6 +323,14 @@ export const researchBoxSX: SxProps<Theme> = {
     position: "absolute",
     backgroundColor: "#3D3F3C",
     boxShadow: "0px 0px 0px 14px #FFFFFF",
+    "& span": {
+      display: "flex",
+      color: "#FFFFFF",
+      width: "100%",
+      height: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+    },
   },
 };
 
